@@ -4,10 +4,13 @@ app.controller('formController', function ($scope, $http, $mdDialog) {
   }
 
   $scope.sendForm = function () {
-    $http.post('/cluster_growth', $scope.form).then(function () {
+    $scope.formStatus = 'sending'
+    $http.post('/cluster_growth', {growth_profile: $scope.growth_profile}).then(function () {
       console.log('Success')
+      $scope.formStatus = 'saved'
     }, function () {
       console.log('Error')
+      $scope.formStatus = 'error'
     })
   }
 })

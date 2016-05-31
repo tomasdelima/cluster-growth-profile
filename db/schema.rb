@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160530174251) do
+ActiveRecord::Schema.define(version: 20160531143200) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -30,6 +30,32 @@ ActiveRecord::Schema.define(version: 20160530174251) do
 
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+
+  create_table "clusters", force: :cascade do |t|
+    t.string   "name"
+    t.string   "growth_stage"
+    t.string   "counsil_name"
+    t.string   "abm_names"
+    t.integer  "cabc_count"
+    t.integer  "cce_count"
+    t.integer  "cgpj_count"
+    t.integer  "cia_count"
+    t.integer  "geographic_size"
+    t.integer  "lsa_count"
+    t.integer  "population_size"
+    t.integer  "sites_with_believers_count"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  create_table "growth_profiles", force: :cascade do |t|
+    t.string   "cycle"
+    t.integer  "cluster_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "growth_profiles", ["cluster_id"], name: "index_growth_profiles_on_cluster_id"
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at",                          null: false
