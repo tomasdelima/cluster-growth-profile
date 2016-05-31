@@ -6,9 +6,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body ng-app="clusterGrowthProfile" ng-controller="formController">
+  <md-content class="topbar">
+    <md-toolbar class="md-hue-2">
+      <div class="md-toolbar-tools">
+        <!-- <md-button class="md-icon-button" aria-label="" ng-disabled="false"></md-button> -->
+        <h2><span>Perfil de Crescimento do Agrupamento</span></h2>
+        <span flex></span>
+        <md-button class="logout" aria-label="" ng-init='user = "<%= current_user.try(:email) %>"' ng-mouseover='showLogout = true' ng-mouseleave='showLogout = false'>
+          <a ng-click="logout('<%= destroy_user_session_path %>')">{{ showLogout ? 'Logout' : user}}</a>
+        </md-button>
+      </div>
+    </md-toolbar>
+  </md-content>
 
-<%= yield %>
-
+  <%= yield %>
 </body>
 </html>

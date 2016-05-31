@@ -4,6 +4,14 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
 
+  authenticate :user do
+    resources :cluster_growth
+  end
+
+  authenticate :user do
+    root 'cluster_growth#new'
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

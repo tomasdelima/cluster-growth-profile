@@ -10,6 +10,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rails_admin'
 gem 'devise'
+gem 'angularjs-rails'
+gem 'rails-angular-material'
 
 group :development, :test do
   gem 'byebug'
