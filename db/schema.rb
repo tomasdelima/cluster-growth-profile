@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531183747) do
+ActiveRecord::Schema.define(version: 20160531233037) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20160531183747) do
   create_table "growth_profiles", force: :cascade do |t|
     t.string   "cycle"
     t.integer  "cluster_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "book1"
     t.integer  "book2"
     t.integer  "book3grade1"
@@ -63,6 +63,18 @@ ActiveRecord::Schema.define(version: 20160531183747) do
     t.integer  "book6"
     t.integer  "book7"
     t.integer  "book8"
+    t.integer  "devotional_gathering_count"
+    t.integer  "devotional_gathering_participants"
+    t.integer  "devotional_gathering_non_bahai_friends"
+    t.integer  "children_classes_count"
+    t.integer  "children_classes_participants"
+    t.integer  "children_classes_non_bahai_friends"
+    t.integer  "junior_youth_group_count"
+    t.integer  "junior_youth_group_participants"
+    t.integer  "junior_youth_group_non_bahai_friends"
+    t.integer  "study_circle_count"
+    t.integer  "study_circle_participants"
+    t.integer  "study_circle_non_bahai_friends"
   end
 
   add_index "growth_profiles", ["cluster_id"], name: "index_growth_profiles_on_cluster_id"

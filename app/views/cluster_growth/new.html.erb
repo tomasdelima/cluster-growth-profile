@@ -2,7 +2,7 @@
   <md-card class="page" layout-padding>
     {{formStatus}}
 
-    <md-grid-list id="cluster-info" md-cols="8" md-row-height="4:1" md-gutter="1px">
+    <md-grid-list class="left" id="cluster-info" md-cols="8" md-row-height="4:1" md-gutter="1px">
       <md-grid-tile md-colspan="4">Agrupamento</md-grid-tile>
       <md-grid-tile md-colspan="4" class="strong"><%= @cluster.name %></md-grid-tile>
       <md-grid-tile md-colspan="4">Estágio de desenvolvimento</md-grid-tile>
@@ -28,8 +28,8 @@
 
     <md-grid-list id="table-1" md-cols="11" md-row-height="2:1" md-gutter="1px">
       <md-grid-tile class="strong" md-rowspan="1" md-colspan="11"><h3>Tabela 1: Jovens e adultos que completaram cursos do Instituto de Capacitação</h3></md-grid-tile>
-      <md-grid-tile class="strong" md-rowspan="3" md-colspan="1">Ciclo</md-grid-tile>
-      <md-grid-tile class="strong" md-rowspan="1" md-colspan="10">Livro</md-grid-tile>
+      <md-grid-tile class="strong gray"  md-rowspan="3" md-colspan="1">Ciclo</md-grid-tile>
+      <md-grid-tile class="strong gray"  md-rowspan="1" md-colspan="10">Livro</md-grid-tile>
       <md-grid-tile class="strong book1" md-rowspan="2" md-colspan="1">1</md-grid-tile>
       <md-grid-tile class="strong book2" md-rowspan="2" md-colspan="1">2</md-grid-tile>
       <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="3">3</md-grid-tile>
@@ -42,9 +42,31 @@
       <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S2</md-grid-tile>
       <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S3</md-grid-tile>
 
-      <md-grid-tile>{{growth_profile.cycle}}</md-grid-tile>
+      <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
       <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
         <md-grid-tile class="<%= f[0...5] %> translucid"><input ng-model="growth_profile.<%= f %>"></md-grid-tile>
+      <% end %>
+    </md-grid-list>
+
+    <md-grid-list id="table-2" md-cols="13" md-row-height="3:2" md-gutter="1px">
+      <md-grid-tile class="strong" md-rowspan="1" md-colspan="13"><h3>Tabela 2: Atividades centrais</h3></md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
+      <md-grid-tile class="devotional_gathering strong" md-colspan="3">Reuniões devocionais</md-grid-tile>
+      <md-grid-tile class="children_classes strong" md-colspan="3">Aulas bahá'ís para crianças</md-grid-tile>
+      <md-grid-tile class="junior_youth_group strong" md-colspan="3">Grupos de pré-jovens</md-grid-tile>
+      <md-grid-tile class="study_circle strong" md-colspan="3">Círculos de estudos</md-grid-tile>
+
+      <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
+        <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
+          <md-grid-tile class="<%= a %> <%= k %> strong small"><%= v %></md-grid-tile>
+        <% end %>
+      <% end %>
+
+      <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+      <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
+        <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
+          <md-grid-tile class="<%= a %> translucid"><input ng-model="growth_profile.<%= a + b %>"></md-grid-tile>
+        <% end %>
       <% end %>
     </md-grid-list>
 
