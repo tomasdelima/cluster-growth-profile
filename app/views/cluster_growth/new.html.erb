@@ -1,13 +1,71 @@
 <md-content class="page-container" layout-padding>
   <md-card class="page">
-    <div layout-gt-sm="row">
-      <md-input-container class="md-block" id="growth-stage" flex-gt-sm>
-        <span>Estágio de Crescimento:</span>
-        <md-radio-group ng-model="data.group1">
+    <div layout="column">
+      <md-input-container>
+        <p>Estágio de desenvolvimento:</p>
+        <md-radio-group ng-model="form.growth_stage" layout="row">
           <md-radio-button value="PIC" class="md-primary">PIC</md-radio-button>
           <md-radio-button value="PC"  class="md-primary">PC</md-radio-button>
         </md-radio-group>
       </md-input-container>
+
+      <md-input-container>
+        <p>Conselho Regional Bahá'í:</p>
+        <md-radio-group ng-model="form.counsil_code" layout="row" layout-xs="column">
+          <md-radio-button value="N"  class="md-primary">Norte</md-radio-button>
+          <md-radio-button value="NE" class="md-primary">Nordeste</md-radio-button>
+          <md-radio-button value="SE" class="md-primary">Sudeste</md-radio-button>
+          <md-radio-button value="CO" class="md-primary">Centro-Oeste</md-radio-button>
+          <md-radio-button value="S"  class="md-primary">Sul</md-radio-button>
+        </md-radio-group>
+      </md-input-container>
+
+      <div>
+        <p>Número de coordenadores do instituto:</p>
+        <md-input-container>
+          <label>CIA</label>
+          <input type="number" ng-model="form.cia_count">
+        </md-input-container>
+        <md-input-container>
+          <label>CABC</label>
+          <input type="number" ng-model="form.cabc_count">
+        </md-input-container>
+        <md-input-container>
+          <label>CGPJ</label>
+          <input type="number" ng-model="form.cgpj_count">
+        </md-input-container>
+        <md-input-container>
+          <label>CCE</label>
+          <input type="number" ng-model="form.cce_count">
+        </md-input-container>
+      </div>
+
+      <md-input-container>
+        <label>Tamanho geográfico (aproximado):</label>
+        <input type="number" ng-model="form.geographic_size">
+      </md-input-container>
+
+      <md-input-container>
+        <label>População total da área:</label>
+        <input type="number" ng-model="form.population_size">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Número atual de localidades com um ou mais crentes:</label>
+        <input type="number" ng-model="form.sites_with_believers_count">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Número atual de Assembleias Espirituais Locais:</label>
+        <input type="number" ng-model="form.lsa_count">
+      </md-input-container>
+
+      <md-input-container>
+        <label>Nome dos membros do Corpo Auxiliar no agrupamento:</label>
+        <input ng-model="form.abm_names">
+      </md-input-container>
     </div>
+
+    <md-button class="md-raised" ng-click="sendForm()">Enviar</md-button>
   </md-card>
 </md-content>
