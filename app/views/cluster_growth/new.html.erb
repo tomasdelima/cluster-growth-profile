@@ -1,49 +1,55 @@
 <md-content class="page-container" layout-padding ng-init="growth_profile = <%= @growth_profile.to_json %>">
-  <md-card class="page">
-    <div layout="column">
-      {{formStatus}}
+  <md-card class="page" layout-padding>
+    {{formStatus}}
 
-      <table>
-        <tr>
-          <td>Agrupamento</td>
-          <td><strong><%= @cluster.name %></strong></td>
-        </tr><tr>
-          <td>Estágio de desenvolvimento</td>
-          <td><strong><%= @cluster.growth_stage %></strong></td>
-        </tr><tr>
-          <td>Conselho Regional Bahá'í</td>
-          <td><strong><%= @cluster.counsil_name %></strong></td>
-        </tr><tr>
-          <td>Número de coordenadores do instituto</td>
-          <td>
-            <table>
-              <tr><td/><td>CIA:</td><td><strong><%= @cluster.cia_count %></strong></td></tr>
-              <tr><td/><td>CABC:</td><td><strong><%= @cluster.cabc_count %></strong></td></tr>
-              <tr><td/><td>CGPJ:</td><td><strong><%= @cluster.cgpj_count %></strong></td></tr>
-              <tr><td/><td>CCE:</td><td><strong><%= @cluster.cce_count %></strong></td></tr>
-            </table>
-          </td>
-        </tr><tr>
-          <td>Tamanho geográfico (aproximado)</td>
-          <td><strong><%= @cluster.geographic_size %></strong></td>
-        </tr><tr>
-          <td>População total da área</td>
-          <td><strong><%= @cluster.population_size %></strong></td>
-        </tr><tr>
-          <td>Número atual de localidades com um ou mais crentes</td>
-          <td><strong><%= @cluster.sites_with_believers_count %></strong></td>
-        </tr><tr>
-          <td>Número atual de Assembleias Espirituais Locais</td>
-          <td><strong><%= @cluster.lsa_count %></strong></td>
-        </tr><tr>
-          <td>Nome dos membros do Corpo Auxiliar no agrupamento</td>
-          <td><strong><%= @cluster.abm_names %></strong></td>
-        </tr>
-      </table>
-    </div>
+    <md-grid-list id="cluster-info" md-cols="8" md-row-height="4:1" md-gutter="1px">
+      <md-grid-tile md-colspan="4">Agrupamento</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.name %></md-grid-tile>
+      <md-grid-tile md-colspan="4">Estágio de desenvolvimento</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.growth_stage %></md-grid-tile>
+      <md-grid-tile md-colspan="4">Conselho Regional Bahá'í</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.counsil_name %></md-grid-tile>
+      <md-grid-tile md-colspan="4">Número de coordenadores do instituto</md-grid-tile>
+      <md-grid-tile>CIA: <strong><%= @cluster.cia_count %></strong></md-grid-tile>
+      <md-grid-tile>CABC: <strong><%= @cluster.cabc_count %></strong></md-grid-tile>
+      <md-grid-tile>CGPJ: <strong><%= @cluster.cgpj_count %></strong></md-grid-tile>
+      <md-grid-tile>CCE: <strong><%= @cluster.cce_count %></strong></md-grid-tile>
+      <md-grid-tile md-colspan="4">Tamanho geográfico (aproximado)</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.geographic_size %></md-grid-tile>
+      <md-grid-tile md-colspan="4">População total da área</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.population_size %></md-grid-tile>
+      <md-grid-tile md-colspan="4">Número atual de localidades com um ou mais crentes</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.sites_with_believers_count %></md-grid-tile>
+      <md-grid-tile md-colspan="4">Número atual de Assembleias Espirituais Locais</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.lsa_count %></md-grid-tile>
+      <md-grid-tile md-colspan="4">Nome dos membros do Corpo Auxiliar no agrupamento</md-grid-tile>
+      <md-grid-tile md-colspan="4" class="strong"><%= @cluster.abm_names %></md-grid-tile>
+    </md-grid-list>
 
-    {{growth_profile}}
+    <md-grid-list id="table-1" md-cols="11" md-row-height="2:1" md-gutter="1px">
+      <md-grid-tile class="strong" md-rowspan="1" md-colspan="11"><h3>Tabela 1: Jovens e adultos que completaram cursos do Instituto de Capacitação</h3></md-grid-tile>
+      <md-grid-tile class="strong" md-rowspan="3" md-colspan="1">Ciclo</md-grid-tile>
+      <md-grid-tile class="strong" md-rowspan="1" md-colspan="10">Livro</md-grid-tile>
+      <md-grid-tile class="strong book1" md-rowspan="2" md-colspan="1">1</md-grid-tile>
+      <md-grid-tile class="strong book2" md-rowspan="2" md-colspan="1">2</md-grid-tile>
+      <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="3">3</md-grid-tile>
+      <md-grid-tile class="strong book4" md-rowspan="2" md-colspan="1">4</md-grid-tile>
+      <md-grid-tile class="strong book5" md-rowspan="2" md-colspan="1">5</md-grid-tile>
+      <md-grid-tile class="strong book6" md-rowspan="2" md-colspan="1">6</md-grid-tile>
+      <md-grid-tile class="strong book7" md-rowspan="2" md-colspan="1">7</md-grid-tile>
+      <md-grid-tile class="strong book8" md-rowspan="2" md-colspan="1">8</md-grid-tile>
+      <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S1</md-grid-tile>
+      <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S2</md-grid-tile>
+      <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S3</md-grid-tile>
 
-    <md-button class="md-raised" ng-click="sendForm()">Enviar</md-button>
+      <md-grid-tile>{{growth_profile.cycle}}</md-grid-tile>
+      <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
+        <md-grid-tile class="<%= f[0...5] %> translucid"><input ng-model="growth_profile.<%= f %>"></md-grid-tile>
+      <% end %>
+    </md-grid-list>
+
+
+<!-- {{growth_profile}} -->
+    <md-button class="md-raised" class="send-form" ng-click="sendForm()">Enviar</md-button>
   </md-card>
 </md-content>

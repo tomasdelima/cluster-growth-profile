@@ -1,0 +1,22 @@
+md-grid-list {
+  md-grid-tile {
+    input {
+      width: 100%;
+    }
+  }
+}
+
+#cluster-info {
+  md-grid-tile {
+    figure {
+      * {
+        display: inline-block;
+        width: 100%;
+      }
+
+      strong {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -18,7 +18,7 @@ class ClusterGrowthController < ApplicationController
   end
 
   def find_growth_profile
-    @growth_profile ||= GrowthProfile.last || GrowthProfile.new
+    @growth_profile ||= GrowthProfile.last || GrowthProfile.new(cycle: current_cycle)
   end
 
   def growth_profile
@@ -28,9 +28,7 @@ class ClusterGrowthController < ApplicationController
   end
 
   def growth_profile_params
-    {
-      cycle: params[:cycle],
-    }
+    params[:growth_profile].permit([:book1, :book2, :book3grade1, :book3grade2, :book1grade3, :book4, :book5, :book6, :book7, :book8, :cycle])
   end
 
   def current_cycle
