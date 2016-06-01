@@ -140,7 +140,7 @@
     </md-grid-list>
 
     <md-grid-list id="table-8" md-cols="8" md-row-height="4:1" md-gutter="1px">
-      <md-grid-tile class="strong" md-colspan="8"><h3>Equipe de Trabalho</h3></md-grid-tile>
+      <md-grid-tile class="strong" md-colspan="8"><h3>Equipe de trabalho</h3></md-grid-tile>
       <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
       <md-grid-tile class="gray strong" md-colspan="2" md-rowspan="2">Pessoas da Equipe</md-grid-tile>
       <md-grid-tile class="gray strong" md-colspan="1" md-rowspan="2">Nº de Visitas</md-grid-tile>
@@ -150,6 +150,29 @@
       <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
       <% {team_people: 2, visits_count: 1, visit_mean_duration: 1, consultation_center: 3}.each do |k, v| %>
         <md-grid-tile class="translucid" md-colspan="<%= v %>"><input type="text" ng-model="growth_profile.<%= k %>"></md-grid-tile>
+      <% end %>
+    </md-grid-list>
+
+    <md-grid-list id="table-9" md-cols="9" md-row-height="4:1" md-gutter="1px">
+      <md-grid-tile class="strong" md-colspan="9"><h3>Recursos humanos externos nesta data</h3></md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">#</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="3">Nome Completo</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Reuniões Devocionais</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Aulas para Crianças</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Grupos de Pré-jovens</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Círculos de Estudo</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Visitas aos Lares</md-grid-tile>
+
+      <% (0..9).each do |n| %>
+        <md-grid-tile class="gray"><%= n + 1 %></md-grid-tile>
+        <% ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |a| %>
+          <md-grid-tile md-colspan="<%= a == 'full_name' ? 3 : 1 %>"><input ng-change="calculateTotals()" type="text" ng-model="growth_profile.external_human_resources[<%= n %>].<%= a %>"></md-grid-tile>
+        <% end %>
+      <% end %>
+      <md-grid-tile class="gray" ng-init="calculateTotals()">Total</md-grid-tile>
+      <md-grid-tile md-colspan="3 "></md-grid-tile>
+      <% ['devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |a| %>
+        <md-grid-tile md-colspan="<%= a == 'full_name' ? 3 : 1 %>">{{growth_profile.external_human_resources.<%= a %>_count}}</md-grid-tile>
       <% end %>
     </md-grid-list>
 

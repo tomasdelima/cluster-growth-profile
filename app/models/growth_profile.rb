@@ -1,6 +1,8 @@
 class GrowthProfile < ActiveRecord::Base
   belongs_to :cluster
 
+  serialize :external_human_resources, Array
+
   def to_json
     GrowthProfile.fields.reduce({}) do |memo, f|
       memo[f] = send(f)
@@ -65,6 +67,7 @@ class GrowthProfile < ActiveRecord::Base
       :visit_mean_duration,
       :consultation_center,
     # table-9
+      :external_human_resources,
     # table-10
     ]
   end
