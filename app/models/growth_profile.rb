@@ -40,6 +40,18 @@ class GrowthProfile < ActiveRecord::Base
       :expansion_phase_non_bahais_count,
       :children_and_junior_youth_registered_count,
       :new_believers_involved_count,
+    # table-4
+      :children_count,
+      :junior_youth_count,
+      :youth_count,
+      :men_count,
+      :women_count,
+    # table-5
+      :homes_visited_for_deepening_count,
+      :sites_with_19_days_feasts_count,
+      :participants_of_19_days_feasts_count,
+      :sites_with_holidays_celebrantions_count,
+      :participants_of_holidays_count,
     ]
   end
 end
