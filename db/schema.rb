@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601142005) do
+ActiveRecord::Schema.define(version: 20160601162228) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -93,6 +93,11 @@ ActiveRecord::Schema.define(version: 20160601142005) do
     t.string   "children_classes_frequency"
     t.string   "junior_youth_group_frequency"
     t.string   "study_circle_frequency"
+    t.text     "concrete_actions"
+    t.string   "team_people"
+    t.string   "visits_count"
+    t.string   "visit_mean_duration"
+    t.string   "consultation_center"
   end
 
   add_index "growth_profiles", ["cluster_id"], name: "index_growth_profiles_on_cluster_id"

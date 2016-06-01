@@ -57,6 +57,15 @@ class GrowthProfile < ActiveRecord::Base
       :children_classes_frequency,
       :junior_youth_group_frequency,
       :study_circle_frequency,
+    # table-7
+      :concrete_actions,
+    # table-8
+      :team_people,
+      :visits_count,
+      :visit_mean_duration,
+      :consultation_center,
+    # table-9
+    # table-10
     ]
   end
 end
