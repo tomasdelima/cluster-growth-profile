@@ -25,6 +25,7 @@ class ClusterGrowthController < ApplicationController
   def assign_growth_profile_attributes(gp=growth_profile)
     gp.assign_attributes(growth_profile_params)
     gp.external_human_resources = params[:growth_profile][:external_human_resources]
+    gp.active_internal_human_resources = params[:growth_profile][:active_internal_human_resources]
   end
 
   def growth_profile

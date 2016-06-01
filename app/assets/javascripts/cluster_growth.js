@@ -3,11 +3,11 @@ app.controller('formController', function ($scope, $http, $mdDialog) {
     $http.delete(route).then(function () {location.reload()}, function () {location.reload()})
   }
 
-  $scope.calculateTotals = function () {
+  $scope.calculateTotals = function (human_resource) {
     ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].map(function (f) {
-      $scope.growth_profile.external_human_resources[f + '_count'] = 0
-      $scope.growth_profile.external_human_resources.map(function (g) {
-        $scope.growth_profile.external_human_resources[f + '_count'] = Number($scope.growth_profile.external_human_resources[f + '_count']) + (Number(g[f]) || 0)
+      $scope.growth_profile[human_resource][f + '_count'] = 0
+      $scope.growth_profile[human_resource].map(function (g) {
+        $scope.growth_profile[human_resource][f + '_count'] = Number($scope.growth_profile[human_resource][f + '_count']) + (Number(g[f]) || 0)
       })
     })
   }
