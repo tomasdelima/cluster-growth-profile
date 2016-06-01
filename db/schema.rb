@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160531233037) do
+ActiveRecord::Schema.define(version: 20160601132533) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -51,8 +51,8 @@ ActiveRecord::Schema.define(version: 20160531233037) do
   create_table "growth_profiles", force: :cascade do |t|
     t.string   "cycle"
     t.integer  "cluster_id"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.integer  "book1"
     t.integer  "book2"
     t.integer  "book3grade1"
@@ -75,6 +75,10 @@ ActiveRecord::Schema.define(version: 20160531233037) do
     t.integer  "study_circle_count"
     t.integer  "study_circle_participants"
     t.integer  "study_circle_non_bahai_friends"
+    t.integer  "expansion_phase_involved_count"
+    t.integer  "expansion_phase_non_bahais_count"
+    t.integer  "children_and_junior_youth_registered_count"
+    t.integer  "new_believers_involved_count"
   end
 
   add_index "growth_profiles", ["cluster_id"], name: "index_growth_profiles_on_cluster_id"

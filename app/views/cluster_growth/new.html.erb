@@ -44,32 +44,45 @@
 
       <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
       <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
-        <md-grid-tile class="<%= f[0...5] %> translucid"><input ng-model="growth_profile.<%= f %>"></md-grid-tile>
+        <md-grid-tile class="<%= f[0...5] %> translucid"><input type="number" ng-model="growth_profile.<%= f %>"></md-grid-tile>
       <% end %>
     </md-grid-list>
 
     <md-grid-list id="table-2" md-cols="13" md-row-height="3:2" md-gutter="1px">
       <md-grid-tile class="strong" md-rowspan="1" md-colspan="13"><h3>Tabela 2: Atividades centrais</h3></md-grid-tile>
       <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
-      <md-grid-tile class="devotional_gathering strong" md-colspan="3">Reuniões devocionais</md-grid-tile>
-      <md-grid-tile class="children_classes strong" md-colspan="3">Aulas bahá'ís para crianças</md-grid-tile>
-      <md-grid-tile class="junior_youth_group strong" md-colspan="3">Grupos de pré-jovens</md-grid-tile>
-      <md-grid-tile class="study_circle strong" md-colspan="3">Círculos de estudos</md-grid-tile>
+      <md-grid-tile class="gray strong" md-colspan="3">Reuniões devocionais</md-grid-tile>
+      <md-grid-tile class="gray strong" md-colspan="3">Aulas bahá'ís para crianças</md-grid-tile>
+      <md-grid-tile class="gray strong" md-colspan="3">Grupos de pré-jovens</md-grid-tile>
+      <md-grid-tile class="gray strong" md-colspan="3">Círculos de estudos</md-grid-tile>
 
       <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
         <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
-          <md-grid-tile class="<%= a %> <%= k %> strong small"><%= v %></md-grid-tile>
+          <md-grid-tile class="gray strong small"><%= v %></md-grid-tile>
         <% end %>
       <% end %>
 
       <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
       <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
         <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
-          <md-grid-tile class="<%= a %> translucid"><input ng-model="growth_profile.<%= a + b %>"></md-grid-tile>
+          <md-grid-tile class="<%= a %> translucid"><input type="number" ng-model="growth_profile.<%= a + b %>"></md-grid-tile>
         <% end %>
       <% end %>
     </md-grid-list>
 
+    <md-grid-list id="table-3" md-cols="9" md-row-height="2:1" md-gutter="1px">
+      <md-grid-tile class="strong" md-colspan="9"><h3>Tabela 3: Expansão durante ciclos de atividades</h3></md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº estimado de amigos envolvidos na Fase de Expansão</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de crianças e pré-jovens registrados durante o Ciclo</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de jovens e adultos declarados durante o Ciclo</md-grid-tile>
+      <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de novos crentes envolvidos no Programa do Instituto</md-grid-tile>
+
+      <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+      <% ['expansion_phase_involved_count', 'expansion_phase_non_bahais_count', 'children_and_junior_youth_registered_count', 'new_believers_involved_count'].each do |a| %>
+        <md-grid-tile class="<%= a %> translucid" md-colspan="2"><input type="number" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+      <% end %>
+    </md-grid-list>
 
 <!-- {{growth_profile}} -->
     <md-button class="md-raised" class="send-form" ng-click="sendForm()">Enviar</md-button>
