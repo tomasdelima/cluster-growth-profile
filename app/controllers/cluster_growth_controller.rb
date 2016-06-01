@@ -15,11 +15,20 @@ class ClusterGrowthController < ApplicationController
   private
 
   def find_cluster
-    @cluster ||= Cluster.last || Cluster.new
+    begin
+      @cluster ||= current_user.clusters.find(params[:cluster_id])
+    rescue
+      render file: "public/422.html", status: :unauthorized
+    end
   end
 
   def find_growth_profile
-    @growth_profile ||= GrowthProfile.last || GrowthProfile.new(cycle: current_cycle)
+    begin
+      cycle = params[:cycle] || current_cycle
+      @growth_profile ||= @cluster.growth_profiles.find_by(cycle: cycle) || GrowthProfile.new(cycle: cycle)
+    rescue
+      render file: "public/422.html", status: :unauthorized
+    end
   end
 
   def assign_growth_profile_attributes(gp=growth_profile)

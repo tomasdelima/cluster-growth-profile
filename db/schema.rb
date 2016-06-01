@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601192942) do
+ActiveRecord::Schema.define(version: 20160601201021) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(version: 20160601192942) do
     t.integer  "sites_with_believers_count"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "clusters_users", id: false, force: :cascade do |t|
+    t.integer "cluster_id"
+    t.integer "user_id"
   end
 
   create_table "growth_profiles", force: :cascade do |t|

@@ -1,4 +1,7 @@
 class Cluster < ActiveRecord::Base
+  has_and_belongs_to_many :users
+  has_many :growth_profiles
+
   def to_json
     {
       name:            name,
