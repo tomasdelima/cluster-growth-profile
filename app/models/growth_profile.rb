@@ -52,6 +52,11 @@ class GrowthProfile < ActiveRecord::Base
       :participants_of_19_days_feasts_count,
       :sites_with_holidays_celebrantions_count,
       :participants_of_holidays_count,
+    # table-6
+      :devotional_gathering_frequency,
+      :children_classes_frequency,
+      :junior_youth_group_frequency,
+      :study_circle_frequency,
     ]
   end
 end
