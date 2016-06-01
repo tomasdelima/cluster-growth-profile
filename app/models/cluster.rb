@@ -4,6 +4,7 @@ class Cluster < ActiveRecord::Base
 
   def to_json
     {
+      id:              id,
       name:            name,
       growth_stage:    growth_stage,
       counsil_name:    counsil_name,

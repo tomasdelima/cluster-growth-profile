@@ -1,0 +1,15 @@
+<md-grid-list id="table-5" md-cols="6" md-row-height="4:1" md-gutter="1px">
+  <md-grid-tile class="strong" md-colspan="6"><h3>Tabela 5: Desenvolvimento comunitário</h3></md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Nº de lares visitados para aprofundamento</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Nº de localidades que realizam as Festas de 19 Dias</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Nº estimado de crentes que participam das Festas de 19 Dias</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Nº de localidades que observam um ou mais Dias Sagrados</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Nº estimado de indivíduos que observaram um ou mais Dias Sagrados</md-grid-tile>
+
+  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+  <% ['homes_visited_for_deepening_count', 'sites_with_19_days_feasts_count', 'participants_of_19_days_feasts_count', 'sites_with_holidays_celebrantions_count', 'participants_of_holidays_count'].each do |a| %>
+    <md-grid-tile class="<%= a %> translucid"><input type="number" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% end %>
+</md-grid-list>
+

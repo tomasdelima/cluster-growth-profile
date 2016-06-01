@@ -1,0 +1,13 @@
+<md-grid-list id="table-3" md-cols="9" md-row-height="2:1" md-gutter="1px">
+  <md-grid-tile class="strong" md-colspan="9"><h3>Tabela 3: Expansão durante ciclos de atividades</h3></md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº estimado de amigos envolvidos na Fase de Expansão</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de crianças e pré-jovens registrados durante o Ciclo</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de jovens e adultos declarados durante o Ciclo</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de novos crentes envolvidos no Programa do Instituto</md-grid-tile>
+
+  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+  <% ['expansion_phase_involved_count', 'expansion_phase_non_bahais_count', 'children_and_junior_youth_registered_count', 'new_believers_involved_count'].each do |a| %>
+    <md-grid-tile class="<%= a %> translucid" md-colspan="2"><input type="number" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% end %>
+</md-grid-list>

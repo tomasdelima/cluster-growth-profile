@@ -1,0 +1,17 @@
+<md-grid-list id="table-4" md-cols="7" md-row-height="2:1" md-gutter="1px">
+  <md-grid-tile class="strong" md-colspan="7"><h3>Tabela 4: População bahá’í</h3></md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Crianças</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Pré-jovens</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Jovens</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Homens adultos</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Mulheres adultas</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Total de crentes</md-grid-tile>
+
+  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+  <% ['children_count', 'junior_youth_count', 'youth_count', 'men_count', 'women_count'].each do |a| %>
+    <md-grid-tile class="<%= a %> translucid"><input type="number" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% end %>
+  <md-grid-tile class="gray translucid">{{growth_profile.children_count + growth_profile.junior_youth_count + growth_profile.youth_count + growth_profile.men_count + growth_profile.women_count}}</md-grid-tile>
+</md-grid-list>
+

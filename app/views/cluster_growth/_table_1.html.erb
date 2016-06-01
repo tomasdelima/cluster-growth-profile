@@ -1,0 +1,21 @@
+<md-grid-list id="table-1" md-cols="11" md-row-height="2:1" md-gutter="1px">
+  <md-grid-tile class="strong" md-rowspan="1" md-colspan="11"><h3>Tabela 1: Jovens e adultos que completaram cursos do Instituto de Capacitação</h3></md-grid-tile>
+  <md-grid-tile class="strong gray"  md-rowspan="3" md-colspan="1">Ciclo</md-grid-tile>
+  <md-grid-tile class="strong gray"  md-rowspan="1" md-colspan="10">Livro</md-grid-tile>
+  <md-grid-tile class="strong book1" md-rowspan="2" md-colspan="1">1</md-grid-tile>
+  <md-grid-tile class="strong book2" md-rowspan="2" md-colspan="1">2</md-grid-tile>
+  <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="3">3</md-grid-tile>
+  <md-grid-tile class="strong book4" md-rowspan="2" md-colspan="1">4</md-grid-tile>
+  <md-grid-tile class="strong book5" md-rowspan="2" md-colspan="1">5</md-grid-tile>
+  <md-grid-tile class="strong book6" md-rowspan="2" md-colspan="1">6</md-grid-tile>
+  <md-grid-tile class="strong book7" md-rowspan="2" md-colspan="1">7</md-grid-tile>
+  <md-grid-tile class="strong book8" md-rowspan="2" md-colspan="1">8</md-grid-tile>
+  <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S1</md-grid-tile>
+  <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S2</md-grid-tile>
+  <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S3</md-grid-tile>
+
+  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+  <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
+    <md-grid-tile class="<%= f[0...5] %> translucid"><input type="number" ng-model="growth_profile.<%= f %>"></md-grid-tile>
+  <% end %>
+</md-grid-list>

@@ -1,0 +1,14 @@
+<md-grid-list id="table-6" md-cols="5" md-row-height="4:1" md-gutter="1px">
+  <md-grid-tile class="strong" md-colspan="5"><h3>Tabela 6: Regularidade das atividades básicas</h3></md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Reuniões devocionais</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Aulas para crianças</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Grupos de pré-jovens</md-grid-tile>
+  <md-grid-tile class="gray strong" md-rowspan="2">Círculos de estudos</md-grid-tile>
+
+  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
+  <% ['devotional_gathering_frequency', 'children_classes_frequency', 'junior_youth_group_frequency', 'study_circle_frequency'].each do |a| %>
+    <md-grid-tile class="<%= a %> translucid"><input type="text" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% end %>
+</md-grid-list>
+
