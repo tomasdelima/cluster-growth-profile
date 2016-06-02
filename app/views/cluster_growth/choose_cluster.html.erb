@@ -1,0 +1,8 @@
+<md-content class="page-container" layout-padding>
+  <md-card class="page" layout-padding>
+    <p>Selecione um agrupamento:</p>
+    <% current_user.clusters.each do |cluster| %>
+        <md-button ng-href="<%= cluster_path cluster.id %>" class="md-raised"><%= cluster.name %></md-button>
+    <% end %>
+  </md-card>
+</md-content>

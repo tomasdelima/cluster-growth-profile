@@ -18,16 +18,16 @@ class ClusterGrowthController < ApplicationController
     begin
       @cluster ||= current_user.clusters.find(params[:cluster_id])
     rescue
-      render file: "public/422.html", status: :unauthorized
+      render :choose_cluster
     end
   end
 
   def find_growth_profile
     begin
-      cycle = params[:cycle] || current_cycle
+      cycle = params[:cycle] || params[:growth_profile][:cycle]
       @growth_profile ||= @cluster.growth_profiles.find_by(cycle: cycle) || GrowthProfile.new(cycle: cycle)
     rescue
-      render file: "public/422.html", status: :unauthorized
+      render :choose_cycle
     end
   end
 
@@ -45,18 +45,5 @@ class ClusterGrowthController < ApplicationController
 
   def growth_profile_params
     params[:growth_profile].permit(GrowthProfile.fields)
-  end
-
-  def current_cycle
-    today = Date.today
-
-    cycle_number = 1
-    cycle_number += 1 if today >= Date.new(today.year, 7, 20)
-    cycle_number += 1 if today >= Date.new(today.year, 10, 20)
-    cycle_number += 1 if today >= Date.new(today.year + 1, 1, 20)
-
-    year = ((today - Date.new(1844, 4, 20)).days/1.year).ceil
-
-    "#{cycle_number}-#{year}"
   end
 end

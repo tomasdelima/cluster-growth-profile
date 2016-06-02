@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine => '/administration', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :admins
   devise_for :users
 
   authenticate :user do
-    resources :cluster_growth
+    get '/cluster/:cluster_id' => 'cluster_growth#new', as: :cluster
+    get '/cluster/:cluster_id/cycle/:cycle' => 'cluster_growth#new', as: :cycle
+    post '/growth_profile' => 'cluster_growth#create'
   end
 
   authenticate :user do
