@@ -6,9 +6,17 @@
   <md-grid-tile class="gray strong" md-colspan="1" md-rowspan="2">Duração média das visitas</md-grid-tile>
   <md-grid-tile class="gray strong" md-colspan="3" md-rowspan="2">Núcleo de consulta</md-grid-tile>
 
-  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
-  <% {team_people: 2, visits_count: 1, visit_mean_duration: 1, consultation_center: 3}.each do |k, v| %>
-    <md-grid-tile class="translucid" md-colspan="<%= v %>"><input type="text" ng-model="growth_profile.<%= k %>"></md-grid-tile>
+  <% (0..3).each do |c| %>
+    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+    <% {team_people: 2, visits_count: 1, visit_mean_duration: 1, consultation_center: 3}.each do |k, v| %>
+      <md-grid-tile class="translucid" md-colspan="<%= v %>">
+        <% if c < 3 %>
+          {{growth_profiles[<%= c %>].<%= k %>}}
+        <% else %>
+          <input type="text" ng-model="growth_profiles[<%= c %>].<%= k %>">
+        <% end %>
+      </md-grid-tile>
+    <% end %>
   <% end %>
 </md-grid-list>
 

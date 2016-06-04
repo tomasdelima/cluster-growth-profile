@@ -1,5 +1,6 @@
 <md-content class="page-container" layout-padding>
   <md-card class="page" layout-padding ng-init="ns=<%= @cluster.current_cycle.to_json %>">
+    <p>Agrupamento: <%= @cluster.name %></p>
     <md-grid-list md-cols="2" md-row-height="4:1" md-gutter="3px">
       <md-grid-tile>Selecione o ano:</md-grid-tile>
       <md-grid-tile>
@@ -13,8 +14,8 @@
       <md-grid-tile>Selecione o ciclo:</md-grid-tile>
       <md-grid-tile>
         <md-radio-group ng-model="ns.cycle">
-          <% (1..4).each do |cycle| %>
-              <md-radio-button value="<%= cycle %>" class="md-primary"><%= cycle %></md-radio-button>
+          <% {'1': '20 de Abril - 19 de Julho', '2': ' 20 de Julho - 19 de Outubro', '3': ' 20 de Outubro - 19 de Janeiro', '4': ' 20 de Janeiro - 19 de Abril'}.each do |cycle, range| %>
+              <md-radio-button value="<%= cycle %>" class="md-primary"><%= range %></md-radio-button>
           <% end %>
         </md-radio-group>
       </md-grid-tile>

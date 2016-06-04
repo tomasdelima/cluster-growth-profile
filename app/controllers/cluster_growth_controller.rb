@@ -1,6 +1,6 @@
 class ClusterGrowthController < ApplicationController
   before_action :find_cluster,                     only: [:new, :create]
-  before_action :find_growth_profile,              only: [:new, :create]
+  before_action :find_growth_profiles,              only: [:new, :create]
   before_action :assign_growth_profile_attributes, only: [      :create]
 
   def new
@@ -18,17 +18,29 @@ class ClusterGrowthController < ApplicationController
     begin
       @cluster ||= current_user.clusters.find(params[:cluster_id])
     rescue
-      render :choose_cluster
+      render :choose_cluster, status: 422
     end
   end
 
-  def find_growth_profile
+  def find_growth_profiles
     begin
-      cycle = params[:cycle] || params[:growth_profile][:cycle]
-      @growth_profile ||= @cluster.growth_profiles.find_by(cycle: cycle) || GrowthProfile.new(cycle: cycle)
+      @growth_profiles = []
+      past_four_cycles.each do |cycle|
+        @growth_profiles << @cluster.growth_profiles.find_or_initialize_by(cycle: cycle)
+      end
     rescue
-      render :choose_cycle
+      render :choose_cycle, status: 422
     end
+  end
+
+  def past_four_cycles
+    params[:cycle] ||= params[:growth_profile][:cycle]
+    year = params[:cycle][0..4].to_i
+    cycle = params[:cycle][4].to_i
+
+    (1..4).map do |count|
+      "#{year + (cycle - count)/4}-#{(cycle - count)%4 + 1}"
+    end.reverse
   end
 
   def assign_growth_profile_attributes(gp=growth_profile)

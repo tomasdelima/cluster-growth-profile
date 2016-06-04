@@ -6,9 +6,17 @@
   <md-grid-tile class="gray strong" md-rowspan="2">Grupos de pré-jovens</md-grid-tile>
   <md-grid-tile class="gray strong" md-rowspan="2">Círculos de estudos</md-grid-tile>
 
-  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
-  <% ['devotional_gathering_frequency', 'children_classes_frequency', 'junior_youth_group_frequency', 'study_circle_frequency'].each do |a| %>
-    <md-grid-tile class="<%= a %> translucid"><input type="text" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% (0..3).each do |c| %>
+    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+    <% ['devotional_gathering_frequency', 'children_classes_frequency', 'junior_youth_group_frequency', 'study_circle_frequency'].each do |a| %>
+      <md-grid-tile class="<%= a %> translucid">
+        <% if c < 3 %>
+          {{growth_profiles[<%= c %>].<%= a %>}}
+        <% else %>
+          <input type="text" ng-model="growth_profiles[<%= c %>].<%= a %>">
+        <% end %>
+      </md-grid-tile>
+    <% end %>
   <% end %>
 </md-grid-list>
 

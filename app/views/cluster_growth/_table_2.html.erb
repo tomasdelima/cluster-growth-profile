@@ -12,10 +12,18 @@
     <% end %>
   <% end %>
 
-  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
-  <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
-    <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
-      <md-grid-tile class="<%= a %> translucid"><input type="number" ng-model="growth_profile.<%= a + b %>"></md-grid-tile>
+  <% (0..3).each do |c| %>
+    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+    <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
+      <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
+        <md-grid-tile class="<%= a %> translucid">
+        <% if c < 3 %>
+          {{growth_profiles[<%= c %>].<%= a + b %>}}
+        <% else %>
+          <input type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
+        <% end %>
+        </md-grid-tile>
+      <% end %>
     <% end %>
   <% end %>
 </md-grid-list>

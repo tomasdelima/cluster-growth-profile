@@ -6,17 +6,19 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   $scope.ns = {}
 
   $scope.calculateTotals = function (human_resource) {
-    ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].map(function (f) {
-      $scope.growth_profile[human_resource][f + '_count'] = 0
-      $scope.growth_profile[human_resource].map(function (g) {
-        $scope.growth_profile[human_resource][f + '_count'] = Number($scope.growth_profile[human_resource][f + '_count']) + (Number(g[f]) || 0)
+    for(c=0; c<4; c++) {
+      ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].map(function (f) {
+        $scope.growth_profiles[c][human_resource][f + '_count'] = 0
+        $scope.growth_profiles[c][human_resource].map(function (g) {
+          $scope.growth_profiles[c][human_resource][f + '_count'] = Number($scope.growth_profiles[c][human_resource][f + '_count']) + (Number(g[f]) || 0)
+        })
       })
-    })
+    }
   }
 
   $scope.sendForm = function () {
     $scope.formStatus = 'sending'
-    data = {growth_profile: $scope.growth_profile, cluster_id: $scope.cluster.id}
+    data = {growth_profile: $scope.growth_profiles[3], cluster_id: $scope.cluster.id}
     $http.post('/growth_profile', data).then(function () {
       console.log('Success')
       $scope.formStatus = 'saved'

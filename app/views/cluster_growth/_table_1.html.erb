@@ -14,8 +14,16 @@
   <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S2</md-grid-tile>
   <md-grid-tile class="strong book3" md-rowspan="1" md-colspan="1">S3</md-grid-tile>
 
-  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
-  <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
-    <md-grid-tile class="<%= f[0...5] %> translucid"><input type="number" ng-model="growth_profile.<%= f %>"></md-grid-tile>
+  <% (0..3).each do |c| %>
+    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+    <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
+      <md-grid-tile class="<%= f[0...5] %> translucid">
+        <% if c < 3 %>
+          {{growth_profiles[<%= c %>].<%= f %>}}
+        <% else %>
+          <input type="number" ng-model="growth_profiles[3].<%= f %>">
+        <% end %>
+      </md-grid-tile>
+    <% end %>
   <% end %>
 </md-grid-list>

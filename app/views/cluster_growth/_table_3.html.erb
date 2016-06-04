@@ -6,8 +6,16 @@
   <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de jovens e adultos declarados durante o Ciclo</md-grid-tile>
   <md-grid-tile class="gray strong" md-rowspan="2" md-colspan="2">Nº de novos crentes envolvidos no Programa do Instituto</md-grid-tile>
 
-  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
-  <% ['expansion_phase_involved_count', 'expansion_phase_non_bahais_count', 'children_and_junior_youth_registered_count', 'new_believers_involved_count'].each do |a| %>
-    <md-grid-tile class="<%= a %> translucid" md-colspan="2"><input type="number" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% (0..3).each do |c| %>
+    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+    <% ['expansion_phase_involved_count', 'expansion_phase_non_bahais_count', 'children_and_junior_youth_registered_count', 'new_believers_involved_count'].each do |a| %>
+      <md-grid-tile class="<%= a %> translucid" md-colspan="2">
+        <% if c < 3 %>
+          {{growth_profiles[<%= c %>].<%= a %>}}
+        <% else %>
+          <input type="number" ng-model="growth_profiles[<%= c %>].<%= a %>">
+        <% end %>
+      </md-grid-tile>
+    <% end %>
   <% end %>
 </md-grid-list>

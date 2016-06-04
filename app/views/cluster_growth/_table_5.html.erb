@@ -7,9 +7,17 @@
   <md-grid-tile class="gray strong" md-rowspan="2">Nº de localidades que observam um ou mais Dias Sagrados</md-grid-tile>
   <md-grid-tile class="gray strong" md-rowspan="2">Nº estimado de indivíduos que observaram um ou mais Dias Sagrados</md-grid-tile>
 
-  <md-grid-tile class="gray translucid">{{growth_profile.cycle}}</md-grid-tile>
-  <% ['homes_visited_for_deepening_count', 'sites_with_19_days_feasts_count', 'participants_of_19_days_feasts_count', 'sites_with_holidays_celebrantions_count', 'participants_of_holidays_count'].each do |a| %>
-    <md-grid-tile class="<%= a %> translucid"><input type="number" ng-model="growth_profile.<%= a %>"></md-grid-tile>
+  <% (0..3).each do |c| %>
+    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+    <% ['homes_visited_for_deepening_count', 'sites_with_19_days_feasts_count', 'participants_of_19_days_feasts_count', 'sites_with_holidays_celebrantions_count', 'participants_of_holidays_count'].each do |a| %>
+      <md-grid-tile class="<%= a %> translucid">
+        <% if c < 3 %>
+          {{growth_profiles[<%= c %>].<%= a %>}}
+        <% else %>
+          <input type="number" ng-model="growth_profiles[<%= c %>].<%= a %>">
+        <% end %>
+      </md-grid-tile>
+    <% end %>
   <% end %>
 </md-grid-list>
 
