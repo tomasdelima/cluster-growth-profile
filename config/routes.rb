@@ -5,13 +5,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   authenticate :user do
-    get '/cluster/:cluster_id' => 'cluster_growth#new', as: :cluster
-    get '/cluster/:cluster_id/cycle/:cycle' => 'cluster_growth#new', as: :cycle
-    post '/growth_profile' => 'cluster_growth#create'
-  end
+    root 'growth_profile#new'
 
-  authenticate :user do
-    root 'cluster_growth#new'
+    get '/cluster/:cluster_id' => 'growth_profile#new', as: :cluster
+    get '/cluster/:cluster_id/cycle/:cycle' => 'growth_profile#new', as: :cycle
+    post '/growth_profile' => 'growth_profile#create'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

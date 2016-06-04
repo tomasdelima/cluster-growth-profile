@@ -13,8 +13,8 @@
         <!-- <md-button class="md-icon-button" aria-label="" ng-disabled="false"></md-button> -->
         <h2><a href="/">Perfil de Crescimento do Agrupamento</a></h2>
         <span flex></span>
-        <md-button class="logout" aria-label="" ng-init='user = "<%= current_user.try(:email) %>"' ng-mouseover='showLogout = true' ng-mouseleave='showLogout = false'>
-          <a ng-click="logout('<%= destroy_user_session_path %>')">{{ showLogout ? 'Logout' : user}}</a>
+        <md-button ng-click="logout('<%= destroy_user_session_path %>')" class="logout" aria-label="" ng-init='user = "<%= current_user.try(:email) %>"' ng-mouseover='showLogout = true' ng-mouseleave='showLogout = false'>
+          <a>{{ showLogout ? 'Logout' : user}}</a>
         </md-button>
       </div>
     </md-toolbar>
