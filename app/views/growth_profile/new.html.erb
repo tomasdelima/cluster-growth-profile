@@ -16,6 +16,6 @@
     <%= render 'table_9' %>
     <%= render 'table_10' %>
 
-    <md-button class="md-raised" id="send-form" ng-click="sendForm()">Enviar ({{formStatus}})</md-button>
+    <button class="md-raised {{formStatus}}" id="send-form" ng-click="sendForm()"></button>
   </md-card>
 </md-content>

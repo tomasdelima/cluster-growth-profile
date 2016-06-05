@@ -4,6 +4,6 @@
   <md-grid-tile class="gray strong" md-colspan="6" md-rowspan="2">Ações concretas de acompanhamento</md-grid-tile>
 
   <md-grid-tile class="gray translucid" md-rowspan="5">{{growth_profiles[3].cycle}}</md-grid-tile>
-  <md-grid-tile class="translucid" md-colspan="6" md-rowspan="5"><textarea ng-model="growth_profiles[3].concrete_actions"></textarea></md-grid-tile>
+  <md-grid-tile class="translucid" md-colspan="6" md-rowspan="5"><textarea ng-change="changeFormState()" ng-model="growth_profiles[3].concrete_actions"></textarea></md-grid-tile>
 </md-grid-list>
 

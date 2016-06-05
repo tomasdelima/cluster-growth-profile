@@ -11,7 +11,7 @@
   <% (0..9).each do |n| %>
     <md-grid-tile class="gray"><%= n + 1 %></md-grid-tile>
     <% ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |a| %>
-      <md-grid-tile md-colspan="<%= a == 'full_name' ? 3 : 1 %>"><input ng-change="calculateTotals('active_internal_human_resources')" type="text" ng-model="growth_profiles[3].active_internal_human_resources[<%= n %>].<%= a %>"></md-grid-tile>
+      <md-grid-tile md-colspan="<%= a == 'full_name' ? 3 : 1 %>"><input ng-change="changeFormState()" ng-change="calculateTotals('active_internal_human_resources')" type="text" ng-model="growth_profiles[3].active_internal_human_resources[<%= n %>].<%= a %>"></md-grid-tile>
     <% end %>
   <% end %>
   <md-grid-tile class="gray" ng-init="calculateTotals('active_internal_human_resources')">Total</md-grid-tile>

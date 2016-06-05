@@ -4,6 +4,7 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   }
 
   $scope.ns = {}
+  $scope.formStatus = 'ok'
 
   $scope.calculateTotals = function (human_resource) {
     for(c=0; c<4; c++) {
@@ -26,5 +27,9 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
       console.log('Error')
       $scope.formStatus = 'error'
     })
+  }
+
+  $scope.changeFormState = function () {
+    $scope.formStatus = 'changed'
   }
 }])

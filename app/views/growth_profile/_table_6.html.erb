@@ -13,7 +13,7 @@
         <% if c < 3 %>
           {{growth_profiles[<%= c %>].<%= a %>}}
         <% else %>
-          <input type="text" ng-model="growth_profiles[<%= c %>].<%= a %>">
+          <input ng-change="changeFormState()" type="text" ng-model="growth_profiles[<%= c %>].<%= a %>">
         <% end %>
       </md-grid-tile>
     <% end %>
