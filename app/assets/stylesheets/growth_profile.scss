@@ -58,15 +58,17 @@ md-grid-list {
   border: none;
   box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   border-radius: 100px;
-  background: #4CAF50;
+  background: whitesmoke;
   position: fixed;
   bottom: 22px;
   right: 20px;
   outline: none;
 
-  &.ok      {background: lightgreen;}
-  &.sending {background: yellow;}
-  &.saved   {background: green;}
-  &.error   {background: #D23F31;}
-  &.changed {background: yellow;}
+  img {
+    display: none;
+
+    &.active {
+      display: inline;
+    }
+  }
 }
