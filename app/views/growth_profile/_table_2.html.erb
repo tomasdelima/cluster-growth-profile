@@ -1,29 +1,40 @@
-<md-grid-list id="table-2" md-cols="13" md-row-height="3:2" md-gutter="1px">
-  <md-grid-tile class="strong" md-rowspan="1" md-colspan="13"><h3>Tabela 2: Atividades centrais</h3></md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
-  <md-grid-tile class="gray strong" md-colspan="3">Reuniões devocionais</md-grid-tile>
-  <md-grid-tile class="gray strong" md-colspan="3">Aulas bahá'ís para crianças</md-grid-tile>
-  <md-grid-tile class="gray strong" md-colspan="3">Grupos de pré-jovens</md-grid-tile>
-  <md-grid-tile class="gray strong" md-colspan="3">Círculos de estudos</md-grid-tile>
+<div id="table-2" class="list colspan-13">
+  <div class="col-13 no-border">
+    <h3>Tabela 2: Atividades centrais</h3>
+  </div>
 
-  <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
-    <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
-      <md-grid-tile class="gray strong small"><%= v %></md-grid-tile>
-    <% end %>
-  <% end %>
+  <div class="col-13 list">
+    <div class="col-1">&nbsp;</div>
+    <div class="col-3 header">Reuniões devocionais</div>
+    <div class="col-3 header">Aulas bahá'ís para crianças</div>
+    <div class="col-3 header">Grupos de pré-jovens</div>
+    <div class="col-3 header">Círculos de estudos</div>
+  </div>
 
-  <% (0..3).each do |c| %>
-    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
+  <div class="col-13 list header">
+    <div class="col-1">Ciclo</div>
     <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
-      <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
-        <md-grid-tile class="<%= a %> translucid">
-        <% if c < 3 %>
-          {{growth_profiles[<%= c %>].<%= a + b %>}}
-        <% else %>
-          <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
-        <% end %>
-        </md-grid-tile>
+      <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
+        <div class="col-1 small"><%= v %></div>
       <% end %>
     <% end %>
+  </div>
+
+  <% (0..3).each do |c| %>
+    <div class="col-13 list hover">
+      <div class="col-1 header">{{growth_profiles[<%= c %>].cycle}}</div>
+
+      <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
+        <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
+          <div class="col-1">
+            <% if c < 3 %>
+              &nbsp;{{growth_profiles[<%= c %>].<%= a + b %>}}&nbsp;
+            <% else %>
+              <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   <% end %>
-</md-grid-list>
+</div>

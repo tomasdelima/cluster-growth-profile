@@ -1,23 +1,29 @@
-<md-grid-list class="left" id="cluster-info" md-cols="8" md-row-height="4:1" md-gutter="1px">
-  <md-grid-tile md-colspan="4">Agrupamento</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.name}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">Estágio de desenvolvimento</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.growth_stage}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">Conselho Regional Bahá'í</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.counsil_name}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">Número de coordenadores do instituto</md-grid-tile>
-  <md-grid-tile>CIA: <strong>{{cluster.cia_count}}</strong></md-grid-tile>
-  <md-grid-tile>CABC: <strong>{{cluster.cabc_count}}</strong></md-grid-tile>
-  <md-grid-tile>CGPJ: <strong>{{cluster.cgpj_count}}</strong></md-grid-tile>
-  <md-grid-tile>CCE: <strong>{{cluster.cce_count}}</strong></md-grid-tile>
-  <md-grid-tile md-colspan="4">Tamanho geográfico (aproximado)</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.geographic_size}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">População total da área</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.population_size}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">Número atual de localidades com um ou mais crentes</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.sites_with_believers_count}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">Número atual de Assembleias Espirituais Locais</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.lsa_count}}</md-grid-tile>
-  <md-grid-tile md-colspan="4">Nome dos membros do Corpo Auxiliar no agrupamento</md-grid-tile>
-  <md-grid-tile md-colspan="4" class="strong">{{cluster.abm_names}}</md-grid-tile>
-</md-grid-list>
+<div id="cluster-info" class="list colspan-8">
+  <div class="col-8 no-border">
+    <h3>Dados do agrupamento</h3>
+  </div>
+
+  <div class="col-8 list">
+    <div class="col-4 header">Agrupamento</div>
+    <div class="col-4">{{cluster.name}}</div>
+    <div class="col-4 header">Estágio de desenvolvimento</div>
+    <div class="col-4">{{cluster.growth_stage}}</div>
+    <div class="col-4 header">Conselho Regional Bahá'í</div>
+    <div class="col-4">{{cluster.counsil_name}}</div>
+    <div class="col-4 header">Número de coordenadores do instituto</div>
+    <div class="col-1">CIA: <strong class="no-border">{{cluster.cia_count}}</strong></div>
+    <div class="col-1">CABC: <strong class="no-border">{{cluster.cabc_count}}</strong></div>
+    <div class="col-1">CGPJ: <strong class="no-border">{{cluster.cgpj_count}}</strong></div>
+    <div class="col-1">CCE: <strong class="no-border">{{cluster.cce_count}}</strong></div>
+    <div class="col-4 header">Tamanho geográfico (aproximado)</div>
+    <div class="col-4">{{cluster.geographic_size}}</div>
+    <div class="col-4 header">População total da área</div>
+    <div class="col-4">{{cluster.population_size}}</div>
+    <div class="col-4 header">Número atual de localidades com um ou mais crentes</div>
+    <div class="col-4">{{cluster.sites_with_believers_count}}</div>
+    <div class="col-4 header">Número atual de Assembleias Espirituais Locais</div>
+    <div class="col-4">{{cluster.lsa_count}}</div>
+    <div class="col-4 header">Nome dos membros do Corpo Auxiliar no agrupamento</div>
+    <div class="col-4">{{cluster.abm_names}}</div>
+  </div>
+</div>

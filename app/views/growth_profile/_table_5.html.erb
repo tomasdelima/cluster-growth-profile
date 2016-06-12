@@ -1,23 +1,29 @@
-<md-grid-list id="table-5" md-cols="6" md-row-height="4:1" md-gutter="1px">
-  <md-grid-tile class="strong" md-colspan="6"><h3>Tabela 5: Desenvolvimento comunitário</h3></md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Nº de lares visitados para aprofundamento</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Nº de localidades que realizam as Festas de 19 Dias</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Nº estimado de crentes que participam das Festas de 19 Dias</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Nº de localidades que observam um ou mais Dias Sagrados</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Nº estimado de indivíduos que observaram um ou mais Dias Sagrados</md-grid-tile>
+<div id="table-5" class="list colspan-6">
+  <div class="col-6 no-border">
+    <h3>Tabela 5: Desenvolvimento comunitário</h3>
+  </div>
+
+  <div class="col-6 list header">
+    <div class="col-1">Ciclo</div>
+    <div class="col-1">Nº de lares visitados para aprofundamento</div>
+    <div class="col-1">Nº de localidades que realizam as Festas de 19 Dias</div>
+    <div class="col-1">Nº estimado de crentes que participam das Festas de 19 Dias</div>
+    <div class="col-1">Nº de localidades que observam um ou mais Dias Sagrados</div>
+    <div class="col-1">Nº estimado de indivíduos que observaram um ou mais Dias Sagrados</div>
+  </div>
 
   <% (0..3).each do |c| %>
-    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
-    <% ['homes_visited_for_deepening_count', 'sites_with_19_days_feasts_count', 'participants_of_19_days_feasts_count', 'sites_with_holidays_celebrantions_count', 'participants_of_holidays_count'].each do |a| %>
-      <md-grid-tile class="<%= a %> translucid">
-        <% if c < 3 %>
-          {{growth_profiles[<%= c %>].<%= a %>}}
-        <% else %>
-          <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a %>">
-        <% end %>
-      </md-grid-tile>
-    <% end %>
+    <div class="col-6 list hover">
+      <div class="col-1 header">{{growth_profiles[<%= c %>].cycle}}</div>
+      <% ['homes_visited_for_deepening_count', 'sites_with_19_days_feasts_count', 'participants_of_19_days_feasts_count', 'sites_with_holidays_celebrantions_count', 'participants_of_holidays_count'].each do |f| %>
+        <div class="col-1">
+          <% if c < 3 %>
+            &nbsp;{{growth_profiles[<%= c %>].<%= f %>}}&nbsp;
+          <% else %>
+            <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[3].<%= f %>">
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
-</md-grid-list>
-
+</div>

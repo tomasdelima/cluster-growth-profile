@@ -1,25 +1,3 @@
-md-grid-list {
-  md-grid-tile {
-    input, textarea {
-      width: 100%;
-      height: 100%;
-      background: transparent;
-    }
-
-    textarea {
-      text-align: left;
-    }
-  }
-
-  * {
-    text-align: center;
-
-    &.small {font-size: 70%;}
-  }
-
-  &.left * {text-align: left;}
-}
-
 #cluster-info {
   md-grid-tile {
     figure {
@@ -33,10 +11,6 @@ md-grid-list {
       }
     }
   }
-}
-
-#table-1, #table-2, #table-3, #table-4, #table-5, #table-6, #table-7, #table-8, #table-9, #table-10 {
-  max-width: 1000px;
 }
 
 #send-form-message {

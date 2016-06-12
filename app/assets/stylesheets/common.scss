@@ -13,9 +13,7 @@
 .list {
   font-size: 0;
 
-  .no-border, .no-border * {
-    border: none !important;
-  }
+  .no-border, .no-border * {border: none !important;}
 
   *:not(.list) {
     line-height: 25px;
@@ -27,7 +25,7 @@
 
     input {
       width: 100%;
-      border: none;
+      border: 1px solid #DDD;
       padding: 0;
     }
 
@@ -38,25 +36,33 @@
       -webkit-box-sizing: border-box;
     }
 
-    &.list {
-      font-size: 0;
+    &.list {font-size: 0;}
+  }
+
+  &.hover:hover {background: rgba(0,0,0,0.1);}
+  .header {background: rgba(0,0,0,0.2);}
+  .small {
+    font-size: 12px;
+    line-height: 22px;
+  }
+
+  @for $i from 1 through 14 {
+    &.colspan-#{$i} {
+      @for $j from 1 through $i {
+        .col-#{$j} {width: calc(100% * #{$j} / #{$i});}
+      }
     }
   }
 
-  &.hover:hover {
-    background: rgba(0,0,0,0.1);
-  }
-
-  .header {
-    background: rgba(0,0,0,0.2);
-  }
-
   @for $i from 1 through 12 {
-    &.colspan-#{$i} {
-      @for $j from 1 through $i {
-        .col-#{$j} {
-          width: calc(100% * #{$j} / #{$i});
-        }
+    .row-#{$i} {
+      line-height: calc(25px * #{$i});
+
+      textarea {
+        height: calc(25px * #{$i});
+        width: 100%;
+        text-align: left;
+        padding: 5px;
       }
     }
   }

@@ -1,25 +1,32 @@
-<md-grid-list id="table-4" md-cols="7" md-row-height="2:1" md-gutter="1px">
-  <md-grid-tile class="strong" md-colspan="7"><h3>Tabela 4: População bahá’í</h3></md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Crianças</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Pré-jovens</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Jovens</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Homens adultos</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Mulheres adultas</md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Total de crentes</md-grid-tile>
+<div id="table-4" class="list colspan-7">
+  <div class="col-7 no-border">
+    <h3>Tabela 4: População bahá’í</h3>
+  </div>
+
+  <div class="col-7 list header">
+    <div class="col-1">Ciclo</div>
+    <div class="col-1">Crianças</div>
+    <div class="col-1">Pré-jovens</div>
+    <div class="col-1">Jovens</div>
+    <div class="col-1">Homens adultos</div>
+    <div class="col-1">Mulheres adultas</div>
+    <div class="col-1">Total de crentes</div>
+  </div>
 
   <% (0..3).each do |c| %>
-    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].cycle}}</md-grid-tile>
-    <% ['children_count', 'junior_youth_count', 'youth_count', 'men_count', 'women_count'].each do |a| %>
-      <md-grid-tile class="<%= a %> translucid">
-        <% if c < 3 %>
-          {{growth_profiles[<%= c %>].<%= a %>}}
-        <% else %>
-          <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a %>">
-        <% end %>
-      </md-grid-tile>
-    <% end %>
-    <md-grid-tile class="gray translucid">{{growth_profiles[<%= c %>].children_count + growth_profiles[<%= c %>].junior_youth_count + growth_profiles[<%= c %>].youth_count + growth_profiles[<%= c %>].men_count + growth_profiles[<%= c %>].women_count}}</md-grid-tile>
-  <% end %>
-</md-grid-list>
+    <div class="col-7 list hover">
+      <div class="col-1 header">{{growth_profiles[<%= c %>].cycle}}</div>
+      <% ['children_count', 'junior_youth_count', 'youth_count', 'men_count', 'women_count'].each do |f| %>
+        <div class="col-1">
+          <% if c < 3 %>
+            &nbsp;{{growth_profiles[<%= c %>].<%= f %>}}&nbsp;
+          <% else %>
+            <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[3].<%= f %>">
+          <% end %>
+        </div>
+      <% end %>
 
+      <div class="col-1">{{growth_profiles[<%= c %>].children_count + growth_profiles[<%= c %>].junior_youth_count + growth_profiles[<%= c %>].youth_count + growth_profiles[<%= c %>].men_count + growth_profiles[<%= c %>].women_count}}</div>
+    </div>
+  <% end %>
+</div>

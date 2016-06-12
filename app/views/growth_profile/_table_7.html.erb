@@ -1,9 +1,17 @@
-<md-grid-list id="table-7" md-cols="7" md-row-height="4:1" md-gutter="1px">
-  <md-grid-tile class="strong" md-colspan="7"><h3>Acompanhamento</h3></md-grid-tile>
-  <md-grid-tile class="gray strong" md-rowspan="2">Ciclo</md-grid-tile>
-  <md-grid-tile class="gray strong" md-colspan="6" md-rowspan="2">Ações concretas de acompanhamento</md-grid-tile>
+<div id="table-7" class="list colspan-7">
+  <div class="col-7 no-border">
+    <h3>Acompanhamento</h3>
+  </div>
 
-  <md-grid-tile class="gray translucid" md-rowspan="5">{{growth_profiles[3].cycle}}</md-grid-tile>
-  <md-grid-tile class="translucid" md-colspan="6" md-rowspan="5"><textarea ng-change="changeFormState()" ng-model="growth_profiles[3].concrete_actions"></textarea></md-grid-tile>
-</md-grid-list>
+  <div class="col-7 list header">
+    <div class="col-1">Ciclo</div>
+    <div class="col-6">Ações concretas de acompanhamento</div>
+  </div>
 
+  <div class="col-7 list hover">
+    <div class="col-1 header row-5">{{growth_profiles[3].cycle}}</div>
+    <div class="col-6 row-5">
+      <textarea ng-change="changeFormState()" ng-model="growth_profiles[3].concrete_actions"></textarea>
+    </div>
+  </div>
+</div>
