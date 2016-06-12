@@ -1,11 +1,12 @@
-<div id="table-9" class="list colspan-14">
+<div id="table-10" class="list colspan-14">
   <div class="col-14 no-border">
     <h3>Recursos humanos do agrupamento ativos nesta data</h3>
     <button class="help" ng-click="showHelp('Favor indicar o nome de uma só pessoa por cada linha, em ordem alfabética. Indicar debaixo das colunas das atividades quantas atividades deste tipo a pessoa realiza ou está responsável diretamente. Na última coluna à direita, indicar o total de atividades que esta pessoa promove. Na última linha preencher com o total para cada tipo de atividade, e na última coluna o total geral das atividades realizadas no agrupamento.', 'Instruções')">?</button>
   </div>
 
-  <div class="col-14 no-border">
-    <button ng-click="copyDataFromLastCycle('active_internal_human_resources')">Copiar dados do ciclo anterior</button>
+  <div class="col-14 no-border list">
+    <div class="col-7"><button ng-click="copyDataFromLastCycle('active_internal_human_resources')">Copiar dados do ciclo anterior</button></div>
+    <div class="col-7"><button class="add-lines" ng-click="addLines('table-10')">Adicionar 50 linhas</button></div>
   </div>
 
   <div class="col-14 list header">
@@ -18,8 +19,10 @@
     <div class="col-2">Visitas aos Lares</div>
   </div>
 
-  <% (0..9).each do |c| %>
-    <div class="col-14 list hover">
+  <% lines = growth_profile.active_internal_human_resources.count %>
+
+  <% (0..(lines + 60)).each do |c| %>
+    <div class="col-14 list hover <%= 'hidden' if c > lines + 10 %>">
       <div class="col-1 header"><%= c %></div>
       <% ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |f| %>
         <div class="col-<%= f == 'full_name' ? 3 : 2 %>">

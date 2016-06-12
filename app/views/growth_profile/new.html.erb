@@ -3,23 +3,23 @@
   <div ng-init="cluster = <%= @cluster.to_json %>" />
 
   <md-card class="page" layout-padding>
-    <%= render 'info' %>
-    <%= render 'table_1' %>
-    <%= render 'table_2' %>
-    <%= render 'table_3' %>
-    <%= render 'table_4' %>
-    <%= render 'table_5' %>
-    <%= render 'table_6' %>
+    <%= render partial: 'info' %>
+    <%= render partial: 'table_1' %>
+    <%= render partial: 'table_2' %>
+    <%= render partial: 'table_3' %>
+    <%= render partial: 'table_4' %>
+    <%= render partial: 'table_5' %>
+    <%= render partial: 'table_6' %>
     <h2>Comentários</h2>
-    <%= render 'table_7' %>
-    <%= render 'table_8' %>
+    <%= render partial: 'table_7' %>
+    <%= render partial: 'table_8' %>
     <h2>Desenvolvimento de recursos humanos</h2>
-    <%= render 'pyramid_1' if @cluster.growth_stage == 'PIC' %>
-    <%= render 'pyramid_2' if @cluster.growth_stage == 'PIC' %>
-    <%= render 'table_11' if @cluster.growth_stage == 'PIC' %>
-    <%= render 'table_9' %>
-    <%= render 'table_10' %>
-    <%= render 'table_12' if @cluster.growth_stage == 'PIC' %>
+    <%= render partial: 'pyramid_1' if @cluster.growth_stage == 'PIC' %>
+    <%= render partial: 'pyramid_2' if @cluster.growth_stage == 'PIC' %>
+    <%= render partial: 'table_11' if @cluster.growth_stage == 'PIC' %>
+    <%= render partial: 'table_9', locals: {growth_profile: @growth_profiles[3]} %>
+    <%= render partial: 'table_10', locals: {growth_profile: @growth_profiles[3]} %>
+    <%= render partial: 'table_12', locals: {growth_profile: @growth_profiles[3]} if @cluster.growth_stage == 'PIC' %>
 
     <button class="md-raised {{formStatus}}" id="send-form" ng-click="sendForm()">
       <img ng-class="{active: formStatus=='ok'}" src="/assets/ic_done_24px.svg">

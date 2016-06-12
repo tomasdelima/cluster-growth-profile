@@ -31,6 +31,11 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
     }
   }
 
+  $scope.addLines = function (table) {
+    $("#" + table + " .hidden").removeClass('hidden')
+    $("#" + table + " .add-lines").addClass('hidden')
+  }
+
   $scope.sendForm = function () {
     $scope.formStatus = 'sending'
     data = {growth_profile: $scope.growth_profiles[3], cluster_id: $scope.cluster.id}
