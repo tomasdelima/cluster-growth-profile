@@ -1,14 +1,11 @@
-#cluster-info {
-  md-grid-tile {
-    figure {
-      * {
-        display: inline-block;
-        width: 100%;
-      }
+#pyramid-1, #pyramid-2 {
+  .list {
+    border: none;
 
-      strong {
-        text-align: center;
-      }
+    div:not(.list) {
+      border: 1px solid #AAA;
+
+      input {border: none;}
     }
   }
 }

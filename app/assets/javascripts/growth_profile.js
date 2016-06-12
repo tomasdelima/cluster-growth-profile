@@ -32,4 +32,11 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   $scope.changeFormState = function () {
     $scope.formStatus = 'changed'
   }
+
+  $scope.copyDataFromLastCycle = function (namespace) {
+    if (confirm('Tem certeza? Isso vai apagar os dados apenas desta tabela e substitui-los pelos dados do ciclo anterior.')) {
+      $scope.growth_profiles[3][namespace] = $scope.growth_profiles[2][namespace]
+      $scope.changeFormState()
+    }
+  }
 }])

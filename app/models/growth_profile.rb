@@ -3,6 +3,8 @@ class GrowthProfile < ActiveRecord::Base
 
   serialize :external_human_resources, Array
   serialize :active_internal_human_resources, Array
+  serialize :accumulated_pyramid, Hash
+  serialize :growth_pyramid, Hash
 
   def to_json
     GrowthProfile.fields.reduce({}) do |memo, f|
@@ -71,6 +73,9 @@ class GrowthProfile < ActiveRecord::Base
       :external_human_resources,
     # table-10
       :active_internal_human_resources,
+    # pyramids
+      :accumulated_pyramid,
+      :growth_pyramid,
     ]
   end
 end

@@ -14,14 +14,15 @@
   font-size: 0;
 
   .no-border, .no-border * {border: none !important;}
+  .border-top {border-top-width: 1px !important;}
 
   *:not(.list) {
     line-height: 25px;
     font-size: initial;
     display: inline-block;
     border: 1px solid #DDD;
-    border-top: 0;
-    border-left: 0;
+    border-top-width: 0;
+    border-left-width: 0;
 
     input {
       width: 100%;
@@ -46,7 +47,7 @@
     line-height: 22px;
   }
 
-  @for $i from 1 through 14 {
+  @for $i from 1 through 21 {
     &.colspan-#{$i} {
       @for $j from 1 through $i {
         .col-#{$j} {width: calc(100% * #{$j} / #{$i});}

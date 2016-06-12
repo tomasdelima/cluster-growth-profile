@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601201021) do
+ActiveRecord::Schema.define(version: 20160612151659) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -105,6 +105,8 @@ ActiveRecord::Schema.define(version: 20160601201021) do
     t.string   "consultation_center"
     t.text     "external_human_resources"
     t.text     "active_internal_human_resources"
+    t.text     "accumulated_pyramid"
+    t.text     "growth_pyramid"
   end
 
   add_index "growth_profiles", ["cluster_id"], name: "index_growth_profiles_on_cluster_id"

@@ -1,0 +1,21 @@
+<div id="pyramid-2" class="list colspan-21">
+  <div class="col-21 no-border">
+    <h3>Crescimento no ciclo <%= @growth_profiles[3].cycle %></h3>
+  </div>
+
+  <%= (1..8).each do |l| %>
+    <div class="col-21 list">
+      <div class="col-<%= 8 - l %> no-border"></div>
+      <div class="col-1 no-border">L<%= 9 - l %></div>
+      <div class="col-<%= l + 2 %>"><input type="number" ng-change="changeFormState()" ng-model="growth_profiles[3].growth_pyramid.finishedBook<%= l %>"></div>
+      <div class="col-<%= l + 2 %>"><input type="number" ng-change="changeFormState()" ng-model="growth_profiles[3].growth_pyramid.studyingBook<%= l %>"></div>
+      <div class="col-<%= 8 - l %> no-border"></div>
+    </div>
+  <% end %>
+
+  <div class="col-21 list">
+    <div class="col-1 no-border"></div>
+    <div class="col-10 no-border">Concluído</div>
+    <div class="col-10 no-border">Estudando</div>
+  </div>
+</div>
