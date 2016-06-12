@@ -47,6 +47,7 @@ class GrowthProfileController < ApplicationController
     gp.assign_attributes(growth_profile_params)
     gp.external_human_resources = params[:growth_profile][:external_human_resources]
     gp.active_internal_human_resources = params[:growth_profile][:active_internal_human_resources]
+    gp.youth_conferences_accompaniments = params[:growth_profile][:youth_conferences_accompaniments]
     gp.accumulated_pyramid = params[:growth_profile][:accumulated_pyramid]
     gp.growth_pyramid = params[:growth_profile][:growth_pyramid]
   end

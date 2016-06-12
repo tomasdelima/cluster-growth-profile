@@ -3,6 +3,7 @@ class GrowthProfile < ActiveRecord::Base
 
   serialize :external_human_resources, Array
   serialize :active_internal_human_resources, Array
+  serialize :youth_conferences_accompaniments, Array
   serialize :accumulated_pyramid, Hash
   serialize :growth_pyramid, Hash
 
@@ -73,6 +74,11 @@ class GrowthProfile < ActiveRecord::Base
       :external_human_resources,
     # table-10
       :active_internal_human_resources,
+    # table-11
+      :converted_junior_youth_groups,
+      :converted_study_circles,
+    # table-12
+      :youth_conferences_accompaniments,
     # pyramids
       :accumulated_pyramid,
       :growth_pyramid,

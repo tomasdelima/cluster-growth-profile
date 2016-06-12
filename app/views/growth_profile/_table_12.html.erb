@@ -1,0 +1,40 @@
+<div id="table-9" class="list colspan-14">
+  <div class="col-14 no-border">
+    <h3>Acompanhamento das conferências de juventude</h3>
+  </div>
+
+  <div class="col-14 no-border">
+    <button ng-click="copyDataFromLastCycle('youth_conferences_accompaniments')">Copiar dados do ciclo anterior</button>
+  </div>
+
+  <div class="col-14 list header">
+    <div class="col-1">#</div>
+    <div class="col-3">Nome Completo</div>
+    <div class="col-2">Conferência</div>
+    <div class="col-2">Conversas</div>
+    <div class="col-2">Instituto</div>
+    <div class="col-2">Atividade</div>
+    <div class="col-2">Acompanha</div>
+  </div>
+
+  <% fields = ['full_name', 'conference', 'conversations', 'institute', 'activity', 'accompaniment'] %>
+  <% (0..9).each do |c| %>
+    <div class="col-14 list hover">
+      <div class="col-1 header"><%= c %></div>
+      <% fields.each do |f| %>
+        <div class="col-<%= f == 'full_name' ? 3 : 2 %>">
+          <input ng-change="changeFormState(); calculateTotals('youth_conferences_accompaniments', <%= fields %>)" ng-model="growth_profiles[3].youth_conferences_accompaniments[<%= c %>].<%= f %>">
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="col-14 list no-border">
+    <div class="col-1" ng-init="calculateTotals('youth_conferences_accompaniments', <%= fields %>)">Total</div>
+    <div class="col-3"></div>
+    <% fields[1..-1].each do |a| %>
+      <div class="col-2">{{growth_profiles[3].youth_conferences_accompaniments.<%= a %>_count}}</div>
+    <% end %>
+  </div>
+</div>
+

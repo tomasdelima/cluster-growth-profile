@@ -6,9 +6,13 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   $scope.ns = {}
   $scope.formStatus = 'ok'
 
-  $scope.calculateTotals = function (human_resource) {
+  $scope.calculateTotals = function (human_resource, keys) {
+    if (!keys) {
+      keys = ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits']
+    }
+
     for(c=0; c<4; c++) {
-      ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].map(function (f) {
+      keys.map(function (f) {
         $scope.growth_profiles[c][human_resource][f + '_count'] = 0
         $scope.growth_profiles[c][human_resource].map(function (g) {
           $scope.growth_profiles[c][human_resource][f + '_count'] = Number($scope.growth_profiles[c][human_resource][f + '_count']) + (Number(g[f]) || 0)
