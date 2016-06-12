@@ -16,9 +16,9 @@
     <h2>Desenvolvimento de recursos humanos</h2>
     <%= render 'pyramid_1' if @cluster.growth_stage == 'PIC' %>
     <%= render 'pyramid_2' if @cluster.growth_stage == 'PIC' %>
+    <%= render 'table_11' if @cluster.growth_stage == 'PIC' %>
     <%= render 'table_9' %>
     <%= render 'table_10' %>
-    <%= render 'table_11' if @cluster.growth_stage == 'PIC' %>
     <%= render 'table_12' if @cluster.growth_stage == 'PIC' %>
 
     <button class="md-raised {{formStatus}}" id="send-form" ng-click="sendForm()">

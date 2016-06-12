@@ -68,3 +68,24 @@
     }
   }
 }
+
+.help {
+  width: 35px;
+  height: 35px;
+  border: none;
+  box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  border-radius: 100px;
+  background: whitesmoke;
+  outline: none;
+  font-weight: bold;
+  margin-left: 10px;
+
+  &.small {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+.with-tooltip {
+  text-decoration: underline;
+}

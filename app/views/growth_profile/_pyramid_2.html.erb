@@ -1,6 +1,7 @@
 <div id="pyramid-2" class="list colspan-21">
   <div class="col-21 no-border">
     <h3>Crescimento no ciclo <%= @growth_profiles[3].cycle %></h3>
+    <button class="help" ng-click="showHelp('Esta pirâmide é destinada a medir apenas o crescimento do ciclo.')">?</button>
   </div>
 
   <%= (1..8).each do |l| %>
@@ -15,7 +16,13 @@
 
   <div class="col-21 list">
     <div class="col-1 no-border"></div>
-    <div class="col-10 no-border">Concluído</div>
-    <div class="col-10 no-border">Estudando</div>
+    <div class="col-10 no-border with-tooltip">
+      Concluído
+      <md-tooltip md-direction="bottom">Indica apenas o número de pessoas que concluíram o estudo de cada um dos livros durante o ciclo que se encerra, independente de quando o iniciaram.</md-tooltip>
+    </div>
+    <div class="col-10 no-border with-tooltip">
+      Estudando
+      <md-tooltip md-direction="bottom">Indica somente o número de novas pessoas que iniciaram seus estudos dentro do ciclo.</md-tooltip>
+    </div>
   </div>
 </div>

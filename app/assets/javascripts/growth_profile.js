@@ -6,6 +6,16 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   $scope.ns = {}
   $scope.formStatus = 'ok'
 
+  $scope.showHelp = function (text, title) {
+    $mdDialog.show(
+      $mdDialog.alert()
+      .title(title)
+      .clickOutsideToClose(true)
+      .textContent(text)
+      .ok('Ok')
+    )
+  }
+
   $scope.calculateTotals = function (human_resource, keys) {
     if (!keys) {
       keys = ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits']

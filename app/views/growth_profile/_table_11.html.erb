@@ -1,12 +1,21 @@
 <div id="table-11" class="list colspan-7">
   <div class="col-7 no-border">
-    <h3>Avanço na sequência dos cursos do instituto</h3>
+    <h3>
+      Avanço na sequência dos cursos do instituto
+      <button class="help" ng-click="showHelp('Esta tabela é destinada a verificar o número de indivíduos que avançam na sequência dos cursos do Instituto Ruhí neste ciclo.')">?</button>
+    </h3>
   </div>
 
   <div class="col-7 list header">
     <div class="col-1">Ciclo</div>
-    <div class="col-3">Crianças → Grupos de Pré-Jovens</div>
-    <div class="col-3">Pré-Jovens → Círculos de Estudo</div>
+    <div class="col-3 with-tooltip">
+      Crianças → Grupos de Pré-Jovens
+      <md-tooltip md-direction="top">Escrever apenas o número de crianças que estavam estudando em Aulas para Crianças que iniciaram o primeiro livro do programa de pré-jovens.</md-tooltip>
+    </div>
+    <div class="col-3 with-tooltip">
+      Pré-Jovens → Círculos de Estudo
+      <md-tooltip md-direction="top">Escrever apenas o número de pré-jovens que estavam participando do programa de pré-jovens e que iniciaram o Livro 1 da sequência de círculos de estudo.</md-tooltip>
+    </div>
   </div>
 
   <% (0..3).each do |c| %>
