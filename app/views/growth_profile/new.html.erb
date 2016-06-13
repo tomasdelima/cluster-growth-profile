@@ -22,11 +22,11 @@
     <%= render partial: 'table_12', locals: {growth_profile: @growth_profiles[3]} if @cluster.growth_stage == 'PIC' %>
 
     <button class="md-raised {{formStatus}}" id="send-form" ng-click="sendForm()">
-      <img ng-class="{active: formStatus=='ok'}" src="/assets/ic_done_24px.svg">
-      <img ng-class="{active: formStatus=='changed'}" src="/assets/ic_save_24px.svg">
-      <img ng-class="{active: formStatus=='sending'}" src="/assets/ic_loop_24px.svg">
-      <img ng-class="{active: formStatus=='saved'}" src="/assets/ic_done_24px.svg">
-      <img ng-class="{active: formStatus=='error'}" src="/assets/ic_warning_24px.svg">
+      <%= image_tag('ic_done_24px', 'ng-class': "{active: formStatus=='ok'}") %>
+      <%= image_tag('ic_save_24px', 'ng-class': "{active: formStatus=='changed'}") %>
+      <%= image_tag('ic_loop_24px', 'ng-class': "{active: formStatus=='sending'}") %>
+      <%= image_tag('ic_done_24px', 'ng-class': "{active: formStatus=='saved'}") %>
+      <%= image_tag('ic_warning_24px', 'ng-class': "{active: formStatus=='error'}") %>
     </button>
   </md-card>
 </md-content>
