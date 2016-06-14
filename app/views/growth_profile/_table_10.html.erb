@@ -4,10 +4,7 @@
     <button class="help" ng-click="showHelp('Favor indicar o nome de uma só pessoa por cada linha, em ordem alfabética. Indicar debaixo das colunas das atividades quantas atividades deste tipo a pessoa realiza ou está responsável diretamente. Na última coluna à direita, indicar o total de atividades que esta pessoa promove. Na última linha preencher com o total para cada tipo de atividade, e na última coluna o total geral das atividades realizadas no agrupamento.', 'Instruções')">?</button>
   </div>
 
-  <div class="col-14 no-border list">
-    <div class="col-7"><button ng-click="copyDataFromLastCycle('active_internal_human_resources')">Copiar dados do ciclo anterior</button></div>
-    <div class="col-7"><button class="add-lines" ng-click="addLines('table-10')">Adicionar 50 linhas</button></div>
-  </div>
+  <md-button class="md-raised md-ink-ripple no-border" ng-click="copyDataFromLastCycle('active_internal_human_resources')">Copiar dados do ciclo anterior</md-button>
 
   <div class="col-14 list header">
     <div class="col-1">#</div>
@@ -39,4 +36,6 @@
       <div class="col-<%= a == 'full_name' ? 3 : 2 %>">{{growth_profiles[3].active_internal_human_resources.<%= a %>_count}}</div>
     <% end %>
   </div>
+
+  <md-button class="md-raised md-ink-ripple add-lines no-border" ng-click="addLines('table-10')">Adicionar 50 linhas</md-button>
 </div>

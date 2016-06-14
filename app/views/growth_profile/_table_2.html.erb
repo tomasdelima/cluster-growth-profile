@@ -17,7 +17,7 @@
       <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
         <div class="col-1 small <%= 'with-tooltip' if k != :non_bahais_friends %>">
           <%= v %>
-          <%= '<md-tooltip md-direction="bottom">'.html_safe if k != :non_bahais_friends %>
+          <%= '<md-tooltip class="md-subhead" layout-padding md-direction="bottom">'.html_safe if k != :non_bahais_friends %>
             <%= 'Representa o número de atividades sendo realizadas de forma regular.' if k == :count %>
             <%= 'Representa o número total estimado de indivíduos que participam da atividade, incluindo aqueles que participam, mas que ainda não são registrados como bahá’ís.' if k == :participants %>
           <%= '</md-tooltip>'.html_safe if k != :non_bahais_friends %>

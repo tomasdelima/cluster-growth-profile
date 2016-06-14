@@ -3,10 +3,7 @@
     <h3>Movimento da pirâmide acumulado até o ciclo <%= @growth_profiles[3].gregorian_cycle %></h3>
   </div>
 
-  <div class="col-21 no-border list">
-    <div class="col-1"></div>
-    <div class="col-20"><button ng-click="copyDataFromLastCycle('accumulated_pyramid')">Copiar dados do ciclo anterior</button></div>
-  </div>
+  <md-button class="md-raised md-ink-ripple no-border" ng-click="copyDataFromLastCycle('accumulated_pyramid')">Copiar dados do ciclo anterior</md-button>
 
   <%= (1..8).each do |l| %>
     <div class="col-21 list">
@@ -22,11 +19,11 @@
     <div class="col-1 no-border"></div>
     <div class="col-10 no-border with-tooltip">
       Concluído
-      <md-tooltip md-direction="bottom">Indica o número total atual acumulado de pessoas que já concluíram cada um dos livros da sequência (dados da Tabela 1).</md-tooltip>
+      <md-tooltip class="md-subhead" layout-padding md-direction="bottom">Indica o número total atual acumulado de pessoas que já concluíram cada um dos livros da sequência (dados da Tabela 1).</md-tooltip>
     </div>
     <div class="col-10 no-border with-tooltip">
       Estudando
-      <md-tooltip md-direction="bottom">Indica o número total de pessoas que estudam atualmente os livros.</md-tooltip>
+      <md-tooltip class="md-subhead" layout-padding md-direction="bottom">Indica o número total de pessoas que estudam atualmente os livros.</md-tooltip>
     </div>
   </div>
 </div>

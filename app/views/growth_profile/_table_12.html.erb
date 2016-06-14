@@ -4,10 +4,7 @@
     <button class="help" ng-click="showHelp('Esta tabela tem como objetivo, ajudar as agências no acompanhamento dos jovens que foram às conferências de juventude e daqueles que foram influenciados pelo movimento pós-conferência. A tabela deve ser preenchida em ordem alfabética com o nome de uma só pessoa por cada linha, indicando com “x” nas colunas posteriores, conforme o seguinte referencial: Conferência: se participou da conferência; Conversas: se está participando de alguma conversa pós conferência; Instituto: se está envolvido no estudo de algum livro do Instituto Ruhí; Atividade: se está promovendo alguma atividade central; Acompanha: se está acompanhando outros jovens nas atividades centrais.', 'Instruções')">?</button>
   </div>
 
-  <div class="col-14 no-border list">
-    <div class="col-7"><button ng-click="copyDataFromLastCycle('youth_conferences_accompaniments')">Copiar dados do ciclo anterior</button></div>
-    <div class="col-7"><button class="add-lines" ng-click="addLines('table-12')">Adicionar 50 linhas</button></div>
-  </div>
+  <md-button class="md-raised md-ink-ripple no-border" ng-click="copyDataFromLastCycle('youth_conferences_accompaniments')">Copiar dados do ciclo anterior</md-button>
 
   <div class="col-14 list header">
     <div class="col-1">#</div>
@@ -32,5 +29,7 @@
       <% end %>
     </div>
   <% end %>
+
+  <md-button class="md-raised md-ink-ripple add-lines no-border" ng-click="addLines('table-12')">Adicionar 50 linhas</md-button>
 </div>
 
