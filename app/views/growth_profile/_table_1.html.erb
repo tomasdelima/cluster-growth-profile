@@ -37,7 +37,7 @@
 
   <% (0..3).each do |c| %>
     <div class="col-11 list hover">
-      <div class="col-1 header">{{growth_profiles[<%= c %>].cycle}}</div>
+      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
       <% ['book1', 'book2', 'book3grade1', 'book3grade2', 'book3grade3', 'book4', 'book5', 'book6', 'book7', 'book8'].each do |f| %>
         <div class="col-1">
           <% if c < 3 %>

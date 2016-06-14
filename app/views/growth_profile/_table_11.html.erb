@@ -20,7 +20,7 @@
 
   <% (0..3).each do |c| %>
     <div class="col-7 list hover">
-      <div class="col-1 header">{{growth_profiles[<%= c %>].cycle}}</div>
+      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
       <% ['converted_junior_youth_groups', 'converted_study_circles'].each do |f| %>
         <div class="col-3">
           <% if c < 3 %>

@@ -1,4 +1,4 @@
 require 'rails_helper'
 
-RSpec.describe ClusterGrowthHelper, type: :helper do
+RSpec.describe GrowthProfileHelper, type: :helper do
 end

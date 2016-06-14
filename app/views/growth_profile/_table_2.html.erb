@@ -4,15 +4,15 @@
   </div>
 
   <div class="col-13 list">
-    <div class="col-1">&nbsp;</div>
-    <div class="col-3 header">Reuniões devocionais</div>
-    <div class="col-3 header">Aulas bahá'ís para crianças</div>
-    <div class="col-3 header">Grupos de pré-jovens</div>
-    <div class="col-3 header">Círculos de estudos</div>
+    <div class="col-1 small">&nbsp;</div>
+    <div class="col-3 header small">Reuniões devocionais</div>
+    <div class="col-3 header small">Aulas bahá'ís para crianças</div>
+    <div class="col-3 header small">Grupos de pré-jovens</div>
+    <div class="col-3 header small">Círculos de estudos</div>
   </div>
 
   <div class="col-13 list header">
-    <div class="col-1">Ciclos</div>
+    <div class="col-1 small">Ciclos</div>
     <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
       <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
         <div class="col-1 small <%= 'with-tooltip' if k != :non_bahais_friends %>">
@@ -29,15 +29,15 @@
 
   <% (0..3).each do |c| %>
     <div class="col-13 list hover">
-      <div class="col-1 header">{{growth_profiles[<%= c %>].cycle}}</div>
+      <div class="col-1 header small">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
 
       <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
         <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
-          <div class="col-1">
+          <div class="col-1 small">
             <% if c < 3 %>
               &nbsp;{{growth_profiles[<%= c %>].<%= a + b %>}}&nbsp;
             <% else %>
-              <input ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
+              <input class="small" ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
             <% end %>
           </div>
         <% end %>

@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe ClusterGrowthController, type: :controller do
+RSpec.describe GrowthProfileController, type: :controller do
 
 end

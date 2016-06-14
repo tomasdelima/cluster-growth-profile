@@ -17,6 +17,7 @@ class GrowthProfile < ActiveRecord::Base
   def self.fields
     [
       :cycle,
+      :gregorian_cycle,
     # table-1
       :book1,
       :book2,
@@ -83,5 +84,11 @@ class GrowthProfile < ActiveRecord::Base
       :accumulated_pyramid,
       :growth_pyramid,
     ]
+  end
+
+  def gregorian_cycle
+    month = {'1': "Abril", '2': "Julho", '3': "Outubro", '4': "Janeiro"}[cycle[4].to_sym]
+    year = cycle[0..2].to_i + 1843 + (cycle[4] == "4" ? 1 : 0)
+    "#{month} #{year}"
   end
 end

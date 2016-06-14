@@ -1,3 +1,9 @@
+@for $i from 1 through 12 {
+  #table-#{$i} {
+    margin-top: 15px;
+  }
+}
+
 #pyramid-1, #pyramid-2 {
   .list {
     border: none;
