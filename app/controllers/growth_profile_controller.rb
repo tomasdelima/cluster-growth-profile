@@ -28,7 +28,6 @@ class GrowthProfileController < ApplicationController
       past_four_cycles.each do |cycle|
         @growth_profiles << @cluster.growth_profiles.find_or_initialize_by(cycle: cycle)
       end
-      puts @growth_profiles.map{|g| {id: g.id, cycle: g.cycle, gregorian_cycle: g.gregorian_cycle}}
     rescue
       render :choose_cycle, status: 422
     end
