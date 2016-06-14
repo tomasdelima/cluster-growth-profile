@@ -87,6 +87,10 @@ class GrowthProfile < ActiveRecord::Base
   end
 
   def gregorian_cycle
+    GrowthProfile.to_gregorian_cycle(cycle)
+  end
+
+  def self.to_gregorian_cycle (cycle)
     month = {'1': "Abril", '2': "Julho", '3': "Outubro", '4': "Janeiro"}[cycle[4].to_sym]
     year = cycle[0..2].to_i + 1843 + (cycle[4] == "4" ? 1 : 0)
     "#{month} #{year}"

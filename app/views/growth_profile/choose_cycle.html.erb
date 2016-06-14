@@ -1,27 +1,15 @@
 <md-content class="page-container" layout-padding>
   <md-card class="page" layout-padding ng-init="ns=<%= @cluster.current_cycle.to_json %>">
-    <p>Agrupamento: <%= @cluster.name %></p>
-    <md-grid-list md-cols="2" md-row-height="4:1" md-gutter="3px">
-      <md-grid-tile>Selecione o ano:</md-grid-tile>
-      <md-grid-tile>
-        <md-radio-group ng-model="ns.year">
-          <% (170..((Date.today - Date.new(1844, 4, 20)).days/1.year).ceil).each do |year| %>
-              <md-radio-button value="<%= year %>" class="md-primary"><%= year %></md-radio-button>
-          <% end %>
-        </md-radio-group>
-      </md-grid-tile>
+    <h2>Agrupamento: <%= @cluster.name %></h2>
+    <h3>Escolha o ciclo:</h3>
 
-      <md-grid-tile>Selecione o ciclo:</md-grid-tile>
-      <md-grid-tile>
-        <md-radio-group ng-model="ns.cycle">
-          <% {'1': '20 de Abril - 19 de Julho', '2': ' 20 de Julho - 19 de Outubro', '3': ' 20 de Outubro - 19 de Janeiro', '4': ' 20 de Janeiro - 19 de Abril'}.each do |cycle, range| %>
-              <md-radio-button value="<%= cycle %>" class="md-primary"><%= range %></md-radio-button>
-          <% end %>
-        </md-radio-group>
-      </md-grid-tile>
-      <md-grid-tile md-colspan="2">
-        <md-button ng-href="/cluster/<%= @cluster.id %>/cycle/{{ns.year}}-{{ns.cycle}}" class="md-raised" ng-disabled="!(ns.year && ns.cycle)">Ir</md-button>
-      </md-grid-tile>
-    </md-grid-list>
+    <div id="cycle-bars" class="colspan-<%= @cycles_to_choose.count %> list">
+      <% @cycles_to_choose.each do |cycle| %>
+        <div class="cycle-bar md-raised col-1 no-border">
+          <div class="label"><%= GrowthProfile.to_gregorian_cycle(cycle) %></div>
+          <md-button class="md-raised" ng-href="/cluster/<%= @cluster.id %>/cycle/<%= cycle %>"><%= cycle %></md-button>
+        </div>
+      <% end %>
+    </div>
   </md-card>
 </md-content>

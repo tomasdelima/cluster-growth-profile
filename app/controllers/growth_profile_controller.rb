@@ -29,6 +29,7 @@ class GrowthProfileController < ApplicationController
         @growth_profiles << @cluster.growth_profiles.find_or_initialize_by(cycle: cycle)
       end
     rescue
+      set_cycles_to_choose
       render :choose_cycle, status: 422
     end
   end
@@ -60,5 +61,16 @@ class GrowthProfileController < ApplicationController
 
   def growth_profile_params
     params[:growth_profile].permit(GrowthProfile.fields)
+  end
+
+  def set_cycles_to_choose
+    current_year = ((Date.today - Date.new(1844, 4, 20)).days/1.year).ceil
+    current_cycle = "#{current_year}-#{(Date.today.month-4)/3%4+1}"
+    @cycles_to_choose = (170..current_year).map do |year|
+      (1..4).map do |c|
+        "#{year}-#{c}" if "#{year}-#{c}" <= current_cycle
+      end
+    end.flatten.compact
+    @cycles_to_choose = @cycles_to_choose[-12..-1]
   end
 end

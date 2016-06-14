@@ -1,3 +1,21 @@
+#cycle-bars {
+  margin-top: 80px;
+
+  .cycle-bar {
+    margin: 0;
+
+    .label {
+      position: absolute;
+      margin-top: -18px;
+      transform: rotateZ(330deg);
+      transform-origin: bottom left;
+    }
+
+    span {line-height: 34px;}
+    &:last-child .md-button {border: 1px solid #4F8A10 !important;}
+  }
+}
+
 @for $i from 1 through 12 {
   #table-#{$i} {
     margin-top: 15px;
