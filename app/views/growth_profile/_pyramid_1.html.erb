@@ -1,13 +1,18 @@
 <div id="pyramid-1" class="list colspan-21">
-  <div class="col-21 no-border">
+  <div class="col-21 no-border left">
     <h3>Movimento da pirâmide acumulado até o ciclo <%= @growth_profiles[3].cycle %></h3>
+  </div>
+
+  <div class="col-21 no-border list">
+    <div class="col-1"></div>
+    <div class="col-20"><button ng-click="copyDataFromLastCycle('accumulated_pyramid')">Copiar dados do ciclo anterior</button></div>
   </div>
 
   <%= (1..8).each do |l| %>
     <div class="col-21 list">
       <div class="col-<%= 8 - l %> no-border"></div>
       <div class="col-1 no-border">L<%= 9 - l %></div>
-      <div class="col-<%= l + 2 %>"><input disabled ng-model="growth_profiles[3].book<%= l == 5 ? '3grade1' : 9 - l %>"></div>
+      <div class="col-<%= l + 2 %>"><input disabled ng-model="growth_profiles[3].book<%= l == 6 ? '3grade1' : 9 - l %>"></div>
       <div class="col-<%= l + 2 %>"><input type="number" ng-change="changeFormState()" ng-model="growth_profiles[3].accumulated_pyramid.studyingBook<%= l %>"></div>
       <div class="col-<%= 8 - l %> no-border"></div>
     </div>

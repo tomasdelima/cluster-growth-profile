@@ -1,6 +1,6 @@
 class GrowthProfileController < ApplicationController
   before_action :find_cluster,                     only: [:new, :create]
-  before_action :find_growth_profiles,              only: [:new, :create]
+  before_action :find_growth_profiles,             only: [:new, :create]
   before_action :assign_growth_profile_attributes, only: [      :create]
 
   def new

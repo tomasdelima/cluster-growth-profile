@@ -14,12 +14,12 @@
     <%= render partial: 'table_7' %>
     <%= render partial: 'table_8' %>
     <h2>Desenvolvimento de recursos humanos</h2>
-    <%= render partial: 'pyramid_1' if @cluster.growth_stage == 'PIC' %>
-    <%= render partial: 'pyramid_2' if @cluster.growth_stage == 'PIC' %>
-    <%= render partial: 'table_11' if @cluster.growth_stage == 'PIC' %>
+    <%= render partial: 'pyramid_1' %>
+    <%= render partial: 'pyramid_2' %>
+    <%= render partial: 'table_11' %>
     <%= render partial: 'table_9', locals: {growth_profile: @growth_profiles[3]} %>
     <%= render partial: 'table_10', locals: {growth_profile: @growth_profiles[3]} %>
-    <%= render partial: 'table_12', locals: {growth_profile: @growth_profiles[3]} if @cluster.growth_stage == 'PIC' %>
+    <%= render partial: 'table_12', locals: {growth_profile: @growth_profiles[3]} %>
 
     <button class="md-raised {{formStatus}}" id="send-form" ng-click="sendForm()">
       <%= image_tag('ic_done_24px', 'ng-class': "{active: formStatus=='ok'}") %>

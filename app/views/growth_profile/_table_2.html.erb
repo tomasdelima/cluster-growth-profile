@@ -1,5 +1,5 @@
 <div id="table-2" class="list colspan-13">
-  <div class="col-13 no-border">
+  <div class="col-13 no-border left">
     <h3>Tabela 2: Atividades centrais</h3>
   </div>
 
@@ -12,7 +12,7 @@
   </div>
 
   <div class="col-13 list header">
-    <div class="col-1">Ciclo</div>
+    <div class="col-1">Ciclos</div>
     <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
       <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
         <div class="col-1 small <%= 'with-tooltip' if k != :non_bahais_friends %>">

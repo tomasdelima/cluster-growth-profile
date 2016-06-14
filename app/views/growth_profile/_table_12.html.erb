@@ -1,12 +1,12 @@
 <div id="table-12" class="list colspan-14">
-  <div class="col-14 no-border">
+  <div class="col-14 no-border left">
     <h3>Acompanhamento das conferências de juventude</h3>
     <button class="help" ng-click="showHelp('Esta tabela tem como objetivo, ajudar as agências no acompanhamento dos jovens que foram às conferências de juventude e daqueles que foram influenciados pelo movimento pós-conferência. A tabela deve ser preenchida em ordem alfabética com o nome de uma só pessoa por cada linha, indicando com “x” nas colunas posteriores, conforme o seguinte referencial: Conferência: se participou da conferência; Conversas: se está participando de alguma conversa pós conferência; Instituto: se está envolvido no estudo de algum livro do Instituto Ruhí; Atividade: se está promovendo alguma atividade central; Acompanha: se está acompanhando outros jovens nas atividades centrais.', 'Instruções')">?</button>
   </div>
 
   <div class="col-14 no-border list">
     <div class="col-7"><button ng-click="copyDataFromLastCycle('youth_conferences_accompaniments')">Copiar dados do ciclo anterior</button></div>
-    <div class="col-7"><button class="add-lines" ng-click="addLines('table-12')">Adicionar 100 linhas</button></div>
+    <div class="col-7"><button class="add-lines" ng-click="addLines('table-12')">Adicionar 50 linhas</button></div>
   </div>
 
   <div class="col-14 list header">
@@ -22,8 +22,8 @@
   <% fields = ['full_name', 'conference', 'conversations', 'institute', 'activity', 'accompaniment'] %>
   <% lines = growth_profile.youth_conferences_accompaniments.count %>
 
-  <% (0..(lines + 140)).each do |c| %>
-    <div class="col-14 list hover <%= 'hidden' if c > lines + 40 %>">
+  <% (0..(lines + 60)).each do |c| %>
+    <div class="col-14 list hover <%= 'hidden' if c > lines + 10 %>">
       <div class="col-1 header"><%= c %></div>
       <% fields.each do |f| %>
         <div class="col-<%= f == 'full_name' ? 3 : 2 %>">

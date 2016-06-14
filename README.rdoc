@@ -1,28 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+O objetivo deste sistema é facilitar o preenchimento do Perfil de Crescimento, atualmente feito através de documentos no formato .DOC, permitindo que estes sejam preenchidos online. Também torna fácil o preenchimento do mesmo por diversas pessoas, caso necessário.
 
-Things you may want to cover:
+Para acessar o painel de administração, acesse https://perfil-de-crescimento.herokuapp.com/administration/
 
-* Ruby version
+Através deste painel é possível criar novos usuários, administradores e agrupamentos, bem como perfis de crescimento.
 
-* System dependencies
+Existe uma diferença entre usuário e administrador. Usuário é o elemento responsável pelo preenchimento dos perfis de crescimento de um ou mais agrupamentos. Administrador é o elemento que tem acesso a todos os dados, tendo poder inclusive de criar, editar e remover outros usuários, administradores e agrupamentos.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Uma vez que um usuário tiver sido criado, o login pode ser feito por https://perfil-de-crescimento.herokuapp.com/
