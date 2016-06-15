@@ -18,3 +18,8 @@
 //= require angular-material
 //= require angular-aria
 //= require_tree .
+
+$(document).ready(function (){
+  $('.loading').addClass('hidden')
+  $('.preload-hidden').removeClass('hidden')
+})

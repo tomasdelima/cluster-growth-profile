@@ -1,3 +1,18 @@
+.loading {
+  position: absolute;
+  background: #ddd;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+  }
+}
+
 .topbar {
   .logout {
     width: 250px;
