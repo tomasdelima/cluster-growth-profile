@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160614024913) do
+ActiveRecord::Schema.define(version: 20160615193330) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at",                          null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20160614024913) do
     t.integer  "cce_count"
     t.integer  "cgpj_count"
     t.integer  "cia_count"
-    t.integer  "geographic_size"
+    t.float    "geographic_size"
     t.integer  "lsa_count"
     t.integer  "population_size"
     t.integer  "sites_with_believers_count"
