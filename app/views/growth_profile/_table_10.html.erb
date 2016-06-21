@@ -1,12 +1,12 @@
-<div id="table-10" class="list colspan-14">
-  <div class="col-14 no-border left">
+<div id="table-10" class="list colspan-15">
+  <div class="col-15 no-border left">
     <h3>Recursos humanos do agrupamento ativos nesta data</h3>
     <button class="help" ng-click="showHelp('Favor indicar o nome de uma só pessoa por cada linha, em ordem alfabética. Indicar debaixo das colunas das atividades quantas atividades deste tipo a pessoa realiza ou está responsável diretamente. Na última coluna à direita, indicar o total de atividades que esta pessoa promove. Na última linha preencher com o total para cada tipo de atividade, e na última coluna o total geral das atividades realizadas no agrupamento.', 'Instruções')">?</button>
   </div>
 
   <md-button class="md-raised md-ink-ripple no-border" ng-click="copyDataFromLastCycle('active_internal_human_resources')">Copiar dados do ciclo anterior</md-button>
 
-  <div class="col-14 list header">
+  <div class="col-15 list header">
     <div class="col-1">#</div>
     <div class="col-3">Nome Completo</div>
     <div class="col-2">Reuniões Devocionais</div>
@@ -14,23 +14,25 @@
     <div class="col-2">Grupos de Pré-jovens</div>
     <div class="col-2">Círculos de Estudo</div>
     <div class="col-2">Visitas aos Lares</div>
+    <div class="col-1">Total</div>
   </div>
 
   <% lines = growth_profile.active_internal_human_resources.count %>
 
-  <% (0..(lines + 60)).each do |c| %>
-    <div class="col-14 list hover <%= 'hidden' if c > lines + 10 %>">
+  <% (1..(lines + 60)).each do |c| %>
+    <div class="col-15 list hover <%= 'hidden' if c > lines + 10 %>">
       <div class="col-1 header"><%= c %></div>
       <% ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |f| %>
         <div class="col-<%= f == 'full_name' ? 3 : 2 %>">
-          <input ng-change="changeFormState(); calculateTotals('active_internal_human_resources')" ng-model="growth_profiles[3].active_internal_human_resources[<%= c %>].<%= f %>">
+          <input ng-change="changeFormState(); calculateTotals('active_internal_human_resources')" ng-model="growth_profiles[3].active_internal_human_resources[<%= c - 1 %>].<%= f %>">
         </div>
       <% end %>
+      <div class="col-1 no-border">&nbsp;{{growth_profiles[3].active_internal_human_resources[<%= c - 1 %>].activities_count}}&nbsp;</div>
     </div>
   <% end %>
 
-  <div class="col-14 list no-border">
-    <div class="col-1" ng-init="calculateTotals('active_internal_human_resources')">Total</div>
+  <div class="col-15 list no-border">
+    <div class="col-1 header" ng-init="calculateTotals('active_internal_human_resources')">Total</div>
     <div class="col-3"></div>
     <% ['devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |a| %>
       <div class="col-<%= a == 'full_name' ? 3 : 2 %>">{{growth_profiles[3].active_internal_human_resources.<%= a %>_count}}</div>

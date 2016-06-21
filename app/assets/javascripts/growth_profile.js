@@ -17,7 +17,7 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   }
 
   $scope.calculateTotals = function (human_resource, keys) {
-    if (!keys) {
+    if(!keys) {
       keys = ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits']
     }
 
@@ -26,6 +26,16 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
         $scope.growth_profiles[c][human_resource][f + '_count'] = 0
         $scope.growth_profiles[c][human_resource].map(function (g) {
           $scope.growth_profiles[c][human_resource][f + '_count'] = Number($scope.growth_profiles[c][human_resource][f + '_count']) + (Number(g[f]) || 0)
+        })
+      })
+    }
+
+    if(human_resource == 'active_internal_human_resources' || human_resource == 'external_human_resources') {
+      var cols = ['devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits']
+      $scope.growth_profiles[3][human_resource].map(function (person) {
+        person.activities_count = 0
+        cols.map(function (activity) {
+          person.activities_count = Number((Number(person.activities_count) || 0) + (Number(person[activity]) || 0))
         })
       })
     }

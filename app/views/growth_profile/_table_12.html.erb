@@ -19,12 +19,12 @@
   <% fields = ['full_name', 'conference', 'conversations', 'institute', 'activity', 'accompaniment'] %>
   <% lines = growth_profile.youth_conferences_accompaniments.count %>
 
-  <% (0..(lines + 60)).each do |c| %>
+  <% (1..(lines + 60)).each do |c| %>
     <div class="col-14 list hover <%= 'hidden' if c > lines + 10 %>">
       <div class="col-1 header"><%= c %></div>
       <% fields.each do |f| %>
         <div class="col-<%= f == 'full_name' ? 3 : 2 %>">
-          <input type="<%= f == 'full_name' ? 'text' : 'checkbox' %>" ng-change="changeFormState(); calculateTotals('youth_conferences_accompaniments', <%= fields %>)" ng-model="growth_profiles[3].youth_conferences_accompaniments[<%= c %>].<%= f %>">
+          <input type="<%= f == 'full_name' ? 'text' : 'checkbox' %>" ng-change="changeFormState(); calculateTotals('youth_conferences_accompaniments', <%= fields %>)" ng-model="growth_profiles[3].youth_conferences_accompaniments[<%= c - 1 %>].<%= f %>">
         </div>
       <% end %>
     </div>
