@@ -1,10 +1,12 @@
-<div id="table-3" class="list colspan-9">
-  <div class="col-9 no-border left">
+<div id="table-3" class="list colspan-10">
+  <div class="col-10 no-border left">
     <h3>Tabela 3: Expansão durante ciclos de atividades</h3>
   </div>
 
-  <div class="col-9 list header">
-    <div class="col-1">Ciclos</div>
+  <div class="col-10 list header">
+    <!-- <div class="col-2">Ciclo</div> -->
+    <div class="col-1">Data início</div>
+    <div class="col-1">Data fim</div>
     <div class="col-2">Nº estimado de amigos envolvidos na Fase de Expansão</div>
     <div class="col-2">Nº de crianças e pré-jovens registrados durante o Ciclo</div>
     <div class="col-2">Nº de jovens e adultos declarados durante o Ciclo</div>
@@ -12,8 +14,9 @@
   </div>
 
   <% (0..3).each do |c| %>
-    <div class="col-9 list hover">
-      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
+    <div class="col-10 list hover">
+      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle.beginning_of_cycle}}</div>
+      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle.end_of_cycle}}</div>
       <% ['expansion_phase_involved_count', 'expansion_phase_non_bahais_count', 'children_and_junior_youth_registered_count', 'new_believers_involved_count'].each do |f| %>
         <div class="col-2">
           <% if c < 3 %>

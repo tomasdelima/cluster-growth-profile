@@ -6,7 +6,7 @@
     <div id="cycle-bars" class="colspan-<%= @cycles_to_choose.count %> list">
       <% @cycles_to_choose.each do |cycle| %>
         <div class="cycle-bar md-raised col-1 no-border">
-          <div class="label"><%= GrowthProfile.to_gregorian_cycle(cycle) %></div>
+          <div class="label"><%= GrowthProfile.to_gregorian_cycle(cycle)[:beginning_of_cycle] %></div>
           <md-button class="md-raised" ng-href="/cluster/<%= @cluster.id %>/cycle/<%= cycle %>"><%= cycle %></md-button>
         </div>
       <% end %>

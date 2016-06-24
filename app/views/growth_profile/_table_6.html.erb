@@ -13,7 +13,7 @@
 
   <% (0..3).each do |c| %>
     <div class="col-5 list hover">
-      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
+      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle.end_of_cycle}}</div>
       <% ['devotional_gathering_frequency', 'children_classes_frequency', 'junior_youth_group_frequency', 'study_circle_frequency'].each do |f| %>
         <div class="col-1">
           <% if c < 3 %>

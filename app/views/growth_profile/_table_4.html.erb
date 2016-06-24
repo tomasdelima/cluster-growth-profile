@@ -15,7 +15,7 @@
 
   <% (0..3).each do |c| %>
     <div class="col-7 list hover">
-      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
+      <div class="col-1 header">{{growth_profiles[<%= c %>].gregorian_cycle.end_of_cycle}}</div>
       <% ['children_count', 'junior_youth_count', 'youth_count', 'men_count', 'women_count'].each do |f| %>
         <div class="col-1">
           <% if c < 3 %>
@@ -26,7 +26,7 @@
         </div>
       <% end %>
 
-      <div class="col-1">{{growth_profiles[<%= c %>].children_count + growth_profiles[<%= c %>].junior_youth_count + growth_profiles[<%= c %>].youth_count + growth_profiles[<%= c %>].men_count + growth_profiles[<%= c %>].women_count}}</div>
+      <div class="col-1 no-border">{{growth_profiles[<%= c %>].children_count + growth_profiles[<%= c %>].junior_youth_count + growth_profiles[<%= c %>].youth_count + growth_profiles[<%= c %>].men_count + growth_profiles[<%= c %>].women_count}}</div>
     </div>
   <% end %>
 </div>

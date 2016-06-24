@@ -77,7 +77,7 @@
 
   @for $i from 1 through 12 {
     .row-#{$i} {
-      line-height: calc(25px * #{$i});
+      height: calc(25px * #{$i});
 
       textarea {
         height: calc(25px * #{$i});

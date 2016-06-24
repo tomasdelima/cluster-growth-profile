@@ -29,7 +29,7 @@
 
   <% (0..3).each do |c| %>
     <div class="col-13 list hover">
-      <div class="col-1 header small">{{growth_profiles[<%= c %>].gregorian_cycle}}</div>
+      <div class="col-1 header small">{{growth_profiles[<%= c %>].gregorian_cycle.end_of_cycle}}</div>
 
       <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
         <% ['_count', '_participants', '_non_bahai_friends'].each do |b| %>
