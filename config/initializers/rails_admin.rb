@@ -28,10 +28,62 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-    show_in_app
+    # show_in_app
 
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+  end
+
+  config.model 'Admin' do
+    fields :email, :password
+    fields :created_at, :updated_at, :last_sign_in_at, :sign_in_count do
+      visible true
+      read_only true
+    end
+  end
+
+  config.model 'User' do
+    fields :email, :password
+    fields :created_at, :updated_at, :last_sign_in_at, :sign_in_count do
+      visible true
+      read_only true
+    end
+  end
+
+  config.model 'Cluster' do
+    include_all_fields
+    exclude_fields :id
+  end
+
+  config.model 'GrowthProfile' do
+    label 'Perfil de crescimento'
+    field(:id) { hide }
+    include_all_fields
+    exclude_fields :id, :gregorian_cycle
+
+    fields(:external_human_resources, :active_internal_human_resources, :youth_conferences_accompaniments) do
+      read_only true
+      pretty_value do
+        bindings[:object][name].reduce('') do |memo1, line|
+          memo1 += line.reduce("") do |memo2, (k,v)|
+            k = "activerecord.attributes.growth_profile.#{name}_fields.#{k}"
+            memo2 += "<strong>#{I18n.t k}:</strong> #{v}; "
+            memo2
+          end
+          memo1 += "<br/>"
+        end.html_safe
+      end
+    end
+
+    fields(:accumulated_pyramid, :growth_pyramid) do
+      read_only true
+      pretty_value do
+        bindings[:object][name].sort.reduce('') do |memo, (k, v)|
+          k = "activerecord.attributes.growth_profile.#{name}_fields.#{k}"
+          memo += "<strong>#{I18n.t k}:</strong> #{v}<br/>"
+        end.html_safe
+      end
+    end
   end
 end

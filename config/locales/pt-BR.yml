@@ -1,14 +1,12 @@
 pt-BR:
-  defaults: &defaults
+  date: &date_defaults
     month_names:
       [~, Janeiro, Fevereiro, Março, Abril, Maio, Junho, Julho, Agosto, Setembro, Outubro, Novembro, Dezembro]
     formats:
        default: "%d. %B %Y"
        short: "%B %Y"
-  date:
-    <<: *defaults
   time:
-    <<: *defaults
+    <<: *date_defaults
 
   activerecord:
     errors:
@@ -17,6 +15,140 @@ pt-BR:
         restrict_dependent_destroy:
           has_one: Não é possível excluir o registro pois existe um %{record} dependente
           has_many: Não é possível excluir o registro pois existem %{record} dependentes
+    models:
+      user:
+        one: Usuário
+        other: Usuários
+      admin:
+        one: Administrador
+        other: Administradores
+      cluster:
+        one: Agrupamento
+        other: Agrupamentos
+      growth_profile:
+        one: Perfil de Crescimento
+        other: Perfis de Crescimento
+    attributes:
+      user: &user_fields
+        email: 'E-mail'
+        password: 'Alterar senha'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+        last_sign_in_at: 'Último login em'
+        sign_in_count: '# de logins'
+      admin:
+        <<: *user_fields
+      cluster:
+        name: 'Nome'
+        growth_stage: 'Estágio de crescimento'
+        counsil_name: 'Conselho'
+        abm_names: 'Membros do Corpo Auxiliar'
+        cabc_count: '# coordenadores de ABC'
+        cce_count: '# coordenadores de CE'
+        cgpj_count: '# coordenadores de GPJ'
+        cia_count: '# coordenadores do agrupamento'
+        geographic_size: 'Tamanho geográfico'
+        lsa_count: '# de AELs'
+        population_size: 'População total da área'
+        sites_with_believers_count: '# locais com crentes'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+      growth_profile:
+        cycle: 'Ciclo'
+        created_at: 'Criado em'
+        updated_at: 'Atualizado em'
+        book1: 'Livro 1'
+        book2: 'Livro 2'
+        book3grade1: 'Livro 3 série 1'
+        book3grade2: 'Livro 3 série 2'
+        book3grade3: 'Livro 3 série 3'
+        book4: 'Livro 4'
+        book5: 'Livro 5'
+        book6: 'Livro 6'
+        book7: 'Livro 7'
+        book8: 'Livro 8'
+        devotional_gathering_count: '# de RD'
+        devotional_gathering_participants: 'Participantes de RD'
+        devotional_gathering_non_bahai_friends: 'Participantes de RD amigos da Fé'
+        children_classes_count: '# de ABC'
+        children_classes_participants: 'Participantes de ABC'
+        children_classes_non_bahai_friends: 'Participantes de ABC amigos da Fé'
+        junior_youth_group_count: '# de GPJ'
+        junior_youth_group_participants: 'Participantes de GPJ'
+        junior_youth_group_non_bahai_friends: 'Participantes de GPJ amigos da Fé'
+        study_circle_count: '# de CE'
+        study_circle_participants: 'Participantes de CE'
+        study_circle_non_bahai_friends: 'Participantes de CE amigos da Fé'
+        expansion_phase_involved_count: '# de envolvidos na fase de expansão'
+        expansion_phase_non_bahais_count: '# de não-baháís envolvidos na fase de expansão'
+        children_and_junior_youth_registered_count: '# de crianças e pré-jovens registrados'
+        new_believers_involved_count: '# de crentes envolvidos'
+        children_count: '# de crianças'
+        junior_youth_count: '# pré-jovens'
+        youth_count: '# jovens'
+        men_count: '# homens'
+        women_count: '# mulheres'
+        homes_visited_for_deepening_count: '# casas visitadas para aprofundamento'
+        sites_with_19_days_feasts_count: '# de lugares com Festa de 19 Dias'
+        participants_of_19_days_feasts_count: '# de participantes das Festas de 19 Dias'
+        sites_with_holidays_celebrantions_count: '# de locais que celebram dias sagrados'
+        participants_of_holidays_count: '# de participantes de dias sagrados'
+        devotional_gathering_frequency: 'Frequência de RD'
+        children_classes_frequency: 'Frequência de ABC'
+        junior_youth_group_frequency: 'Frequência de GPJ'
+        study_circle_frequency: 'Frequência de CE'
+        concrete_actions: 'Ações concretas'
+        team_people: 'Pessoas do time'
+        visits_count: '# de visitas'
+        visit_mean_duration: 'Duração média da visita'
+        consultation_center: 'Centro da consulta'
+        external_human_resources: 'Recursos humanos externos'
+        active_internal_human_resources: 'Recursos humanos internos ativos'
+        accumulated_pyramid: 'Pirâmide 1'
+        growth_pyramid: 'Pirâmide 2'
+        converted_junior_youth_groups: 'GPJ convertidos'
+        converted_study_circles: 'ABC convertidos'
+        youth_conferences_accompaniments: 'Acompanhamentos das Conferências de Juventude'
+
+        human_resources_fields: &human_resources_fields
+          full_name: 'Nome'
+          devotional_gatherings: '# de RD'
+          study_circles: '# de CE'
+          activities_count: '# de atividades'
+          children_classes: '# de ABC'
+          junior_youth_groups: '# de GPJ'
+          visits: '# de visitas'
+        external_human_resources_fields:
+          <<: *human_resources_fields
+        active_internal_human_resources_fields:
+          <<: *human_resources_fields
+        accumulated_pyramid_fields: &pyramid_fields
+          studyingBook1: 'Estudando o livro 1'
+          studyingBook2: 'Estudando o livro 2'
+          studyingBook3: 'Estudando o livro 3'
+          studyingBook4: 'Estudando o livro 4'
+          studyingBook5: 'Estudando o livro 5'
+          studyingBook6: 'Estudando o livro 6'
+          studyingBook7: 'Estudando o livro 7'
+          studyingBook8: 'Estudando o livro 8'
+        growth_pyramid_fields:
+          finishedBook1: 'Terminaram o livro 1'
+          finishedBook2: 'Terminaram o livro 2'
+          finishedBook3: 'Terminaram o livro 3'
+          finishedBook4: 'Terminaram o livro 4'
+          finishedBook5: 'Terminaram o livro 5'
+          finishedBook6: 'Terminaram o livro 6'
+          finishedBook7: 'Terminaram o livro 7'
+          finishedBook8: 'Terminaram o livro 8'
+          <<: *pyramid_fields
+        youth_conferences_accompaniments_fields:
+          full_name: 'Nome'
+          conference: 'Conferência'
+          institute: 'Instituto'
+          conversations: 'Conversas'
+          activity: 'Atividade'
+          accompaniment: 'Acompanhamento'
+
   date:
     abbr_day_names:
     - Dom
