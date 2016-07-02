@@ -7,7 +7,6 @@ pt-BR:
        short: "%B %Y"
   time:
     <<: *date_defaults
-
   activerecord:
     errors:
       messages:
@@ -31,11 +30,15 @@ pt-BR:
     attributes:
       user: &user_fields
         email: 'E-mail'
-        password: 'Alterar senha'
+        password: 'Senha'
         created_at: 'Criado em'
         updated_at: 'Atualizado em'
         last_sign_in_at: 'Último login em'
         sign_in_count: '# de logins'
+        remember_me: Lembrar de mim
+        forgot_your_password: Esqueceu sua senha?
+        log_in: Entrar
+        log_in_as: Faça seu login como
       admin:
         <<: *user_fields
       cluster:
@@ -148,7 +151,6 @@ pt-BR:
           conversations: 'Conversas'
           activity: 'Atividade'
           accompaniment: 'Acompanhamento'
-
   date:
     abbr_day_names:
     - Dom
