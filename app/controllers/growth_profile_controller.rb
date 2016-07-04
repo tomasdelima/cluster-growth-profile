@@ -54,7 +54,7 @@ class GrowthProfileController < ApplicationController
   end
 
   def growth_profile
-    @growth_profile ||= GrowthProfile.find_or_initialize_by(cycle: params[:cycle]) do |gp|
+    @growth_profile ||= GrowthProfile.find_or_initialize_by(cluster_id: params[:cluster_id], cycle: params[:cycle]) do |gp|
       assign_growth_profile_attributes(gp)
     end
   end
