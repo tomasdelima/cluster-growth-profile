@@ -37,6 +37,11 @@
     <% ['devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |a| %>
       <div class="col-<%= a == 'full_name' ? 3 : 2 %>">{{growth_profiles[3].active_internal_human_resources.<%= a %>_count}}</div>
     <% end %>
+    <div class="col-1"><strong>
+      {{<% ['devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits'].each do |a| %>
+        growth_profiles[3].active_internal_human_resources.<%= a %>_count +
+      <% end %>0}}
+    </strong></div>
   </div>
 
   <md-button class="md-raised md-ink-ripple add-lines no-border" ng-click="addLines('table-10')">Adicionar 50 linhas</md-button>
