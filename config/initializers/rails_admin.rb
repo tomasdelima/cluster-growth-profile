@@ -44,11 +44,12 @@ RailsAdmin.config do |config|
   end
 
   config.model 'User' do
-    fields :email, :password
+    fields :email, :password, :clusters
     fields :created_at, :updated_at, :last_sign_in_at, :sign_in_count do
       visible true
       read_only true
     end
+    field(:password) { label 'Alterar a senha' }
   end
 
   config.model 'Cluster' do
