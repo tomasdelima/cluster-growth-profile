@@ -63,9 +63,20 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
   }
 
   $scope.copyDataFromLastCycle = function (namespace) {
-    if (confirm('Tem certeza? Isso vai apagar os dados apenas desta tabela e substitui-los pelos dados do ciclo anterior.')) {
+    var confirm = $mdDialog.confirm()
+          .title('Tem certeza?')
+          .textContent('Isso vai apagar os dados apenas desta tabela e substitui-los pelos dados do ciclo anterior.')
+          .ok('Sim')
+          .cancel('Cancelar')
+    $mdDialog.show(confirm).then(function() {
       $scope.growth_profiles[3][namespace] = $scope.growth_profiles[2][namespace]
+      $scope.calculateTotals(namespace)
       $scope.changeFormState()
-    }
+    })
+  }
+
+  $scope.showPastYears = function () {
+    $('#choose-cycle .hidden').removeClass('hidden')
+    $scope.hidePastCyclesButton = true
   }
 }])

@@ -1,18 +1,11 @@
-#cycle-bars {
-  margin-top: 80px;
+#choose-cycle {
+  margin-top: 50px;
 
-  .cycle-bar {
-    margin: 0;
-
-    .label {
-      position: absolute;
-      margin-top: -18px;
-      transform: rotateZ(330deg);
-      transform-origin: bottom left;
-    }
-
-    span {line-height: 34px;}
-    &:last-child .md-button {border: 1px solid #4F8A10 !important;}
+  .year {
+    margin: 6px 8px;
+    line-height: 36px;
+    font-size: 14px;
+    overflow: hidden;
   }
 }
 

@@ -2,14 +2,26 @@
   <md-card class="page" layout-padding ng-init="ns=<%= @cluster.current_cycle.to_json %>">
     <h2>Agrupamento: <%= @cluster.name %></h2>
     <h3>Escolha o ciclo:</h3>
+    <div id="choose-cycle" class="md-raised colspan-5 list">
+      <% @cycles_to_choose.each do |year, values1| %>
+        <div class="col-5 no-border list <%= 'hidden' if !values1[:current_year] %>">
+          <div class="col-1">
+            <div class="year">
+              <%= year %>
+              (<%= year + 1843 %>)
+            </div>
+          </div>
 
-    <div id="cycle-bars" class="colspan-<%= @cycles_to_choose.count %> list">
-      <% @cycles_to_choose.each do |cycle| %>
-        <div class="cycle-bar md-raised col-1 no-border">
-          <div class="label"><%= GrowthProfile.to_gregorian_cycle(cycle)[:beginning_of_cycle] %></div>
-          <md-button class="md-raised" ng-href="/cluster/<%= @cluster.id %>/cycle/<%= cycle %>"><%= cycle %></md-button>
+          <% values1[:cycles].each do |cycle, values2| %>
+            <div class="col-1">
+              <md-button class="md-raised no-border" ng-href="/cluster/<%= @cluster.id %>/cycle/<%= year %>-<%= cycle %>" <%= 'disabled' if values2[:active] %>>
+                <%= values2[:beginning_of_cycle] %> - <%= values2[:end_of_cycle] %>
+              </md-button>
+            </div>
+          <% end %>
         </div>
       <% end %>
+      <md-button class="md-raised no-border" ng-hide="hidePastCyclesButton" ng-click="showPastYears()">Mostrar ciclos anteriores</md-button>
     </div>
   </md-card>
 </md-content>

@@ -50,6 +50,9 @@ RailsAdmin.config do |config|
       read_only true
     end
     field(:password) { label 'Alterar a senha' }
+    list do
+      field(:password) { hide }
+    end
   end
 
   config.model 'Cluster' do

@@ -66,11 +66,20 @@ class GrowthProfileController < ApplicationController
   def set_cycles_to_choose
     current_year = ((Date.today - Date.new(1844, 4, 20)).days/1.year).ceil
     current_cycle = "#{current_year}-#{(Date.today.month-4)/3%4+1}"
-    @cycles_to_choose = (170..current_year).map do |year|
-      (1..4).map do |c|
-        "#{year}-#{c}" if "#{year}-#{c}" <= current_cycle
-      end
-    end.flatten.compact
-    @cycles_to_choose = @cycles_to_choose[-12..-1]
+    @cycles_to_choose = (0..3).reduce({}) do |memo1, count|
+      year = current_year - count
+      memo1[year] = {
+        current_year: current_year == year,
+        cycles: (1..4).reduce({}) do |memo2, c|
+          memo2[c] = {
+            active: "#{year}-#{c}" >= current_cycle,
+            beginning_of_cycle: GrowthProfile.to_gregorian_cycle("#{year}-#{c}")[:beginning_of_cycle],
+            end_of_cycle: GrowthProfile.to_gregorian_cycle("#{year}-#{c}")[:end_of_cycle]
+          }
+          memo2
+        end
+      }
+      memo1
+    end
   end
 end

@@ -39,6 +39,7 @@ pt-BR:
         forgot_your_password: Esqueceu sua senha?
         log_in: Entrar
         log_in_as: Faça seu login como
+        clusters: Agrupamentos
       admin:
         <<: *user_fields
       cluster:
