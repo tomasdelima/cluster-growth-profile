@@ -16,14 +16,17 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
     )
   }
 
-  $scope.calculateMainActivitiesCount = function () {
+  $scope.validateAndCalculateTable2 = function () {
     for(var c = 0; c < 4; c++) {
-      $scope.growth_profiles[c].mailActivitiesCount = 0
+      $scope.growth_profiles[c].main_activities_count = 0
       var keys = ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle']
       keys.map(function (activity) {
-        $scope.growth_profiles[c].mailActivitiesCount += $scope.growth_profiles[c][activity + '_count']
+        $scope.growth_profiles[c].main_activities_count += $scope.growth_profiles[c][activity + '_count']
+        $scope.growth_profiles[c][activity + '_invalid'] = ($scope.growth_profiles[c][activity + '_participants'] || 0) < ($scope.growth_profiles[c][activity + '_non_bahai_friends'] || 0)
       })
     }
+
+    $scope.table2_invalid = $scope.growth_profiles[3].devotional_gathering_invalid || $scope.growth_profiles[3].children_classes_invalid || $scope.growth_profiles[3].junior_youth_group_invalid || $scope.growth_profiles[3].study_circle_invalid
     $scope.changeFormState()
   }
 

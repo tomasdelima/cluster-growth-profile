@@ -25,7 +25,7 @@
         </div>
       <% end %>
     <% end %>
-    <div class="col-1 small" ng-init="calculateMainActivitiesCount()">Total</div>
+    <div class="col-1 small" ng-init="validateAndCalculateTable2()">Total</div>
   </div>
 
   <% (0..3).each do |c| %>
@@ -38,12 +38,15 @@
             <% if c < 3 %>
               &nbsp;{{growth_profiles[<%= c %>].<%= a + b %>}}&nbsp;
             <% else %>
-              <input class="small" ng-change="calculateMainActivitiesCount()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
+              <input class="small" ng-class="<%= "{invalid: growth_profiles[#{c}].#{a}_invalid}" if b != '_count' %>" ng-change="validateAndCalculateTable2()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
             <% end %>
           </div>
         <% end %>
       <% end %>
-      <div class="col-1 small no-border">&nbsp;{{growth_profiles[<%= c %>].mailActivitiesCount}}&nbsp;</div>
+      <div class="col-1 small no-border">&nbsp;{{growth_profiles[<%= c %>].main_activities_count}}&nbsp;</div>
     </div>
   <% end %>
+  <div class="col-14 no-border">
+    <md-tooltip class="md-subhead" layout-padding md-visible="table2_invalid">O número de amigos da fé não deveria ser maior que o número de participantes</md-tooltip>
+  </div>
 </div>

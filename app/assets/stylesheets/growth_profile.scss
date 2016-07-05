@@ -11,7 +11,7 @@
 
 @for $i from 1 through 12 {
   #table-#{$i} {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 }
 
@@ -59,4 +59,9 @@
       display: inline;
     }
   }
+}
+
+#table-2 .invalid {
+  border: 1px solid #FE7F22;
+  outline: none;
 }
