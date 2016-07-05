@@ -14,7 +14,7 @@
 
           <% values1[:cycles].each do |cycle, values2| %>
             <div class="col-1">
-              <md-button class="md-raised no-border" ng-href="/cluster/<%= @cluster.id %>/cycle/<%= year %>-<%= cycle %>" <%= 'disabled' if values2[:active] %>>
+              <md-button class="cycle md-raised no-border" ng-href="/cluster/<%= @cluster.id %>/cycle/<%= year %>-<%= cycle %>" ng-disabled="<%= values2[:active] %>">
                 <%= values2[:beginning_of_cycle] %> - <%= values2[:end_of_cycle] %>
               </md-button>
             </div>

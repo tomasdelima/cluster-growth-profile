@@ -7,6 +7,10 @@
     font-size: 14px;
     overflow: hidden;
   }
+
+  .cycle {
+    line-height: 36px;
+  }
 }
 
 @for $i from 1 through 12 {
@@ -62,6 +66,6 @@
 }
 
 #table-2 .invalid {
-  border: 1px solid #FE7F22;
+  border: 1px solid #E8BF28;
   outline: none;
 }
