@@ -1,9 +1,9 @@
-<div id="table-2" class="list colspan-13">
-  <div class="col-13 no-border left">
+<div id="table-2" class="list colspan-14">
+  <div class="col-14 no-border left">
     <h3>Tabela 2: Atividades centrais</h3>
   </div>
 
-  <div class="col-13 list">
+  <div class="col-14 list">
     <div class="col-1 small">&nbsp;</div>
     <div class="col-3 header small">Reuniões devocionais</div>
     <div class="col-3 header small">Aulas bahá'ís para crianças</div>
@@ -11,7 +11,7 @@
     <div class="col-3 header small">Círculos de estudos</div>
   </div>
 
-  <div class="col-13 list header">
+  <div class="col-14 list header">
     <div class="col-1 small">Ciclos</div>
     <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
       <% {count: '# de ativ.', participants: '# de partic.', non_bahais_friends: '# de amigos'}.each do |k, v| %>
@@ -25,10 +25,11 @@
         </div>
       <% end %>
     <% end %>
+    <div class="col-1 small" ng-init="calculateMainActivitiesCount()">Total</div>
   </div>
 
   <% (0..3).each do |c| %>
-    <div class="col-13 list hover">
+    <div class="col-14 list hover">
       <div class="col-1 header small">{{growth_profiles[<%= c %>].gregorian_cycle.end_of_cycle}}</div>
 
       <% ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle'].each do |a| %>
@@ -37,11 +38,12 @@
             <% if c < 3 %>
               &nbsp;{{growth_profiles[<%= c %>].<%= a + b %>}}&nbsp;
             <% else %>
-              <input class="small" ng-change="changeFormState()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
+              <input class="small" ng-change="calculateMainActivitiesCount()" type="number" ng-model="growth_profiles[<%= c %>].<%= a + b %>">
             <% end %>
           </div>
         <% end %>
       <% end %>
+      <div class="col-1 small no-border">&nbsp;{{growth_profiles[<%= c %>].mailActivitiesCount}}&nbsp;</div>
     </div>
   <% end %>
 </div>

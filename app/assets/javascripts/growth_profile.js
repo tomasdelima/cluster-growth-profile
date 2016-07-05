@@ -16,12 +16,23 @@ app.controller('formController', ['$scope', '$http', '$mdDialog', function ($sco
     )
   }
 
+  $scope.calculateMainActivitiesCount = function () {
+    for(var c = 0; c < 4; c++) {
+      $scope.growth_profiles[c].mailActivitiesCount = 0
+      var keys = ['devotional_gathering', 'children_classes', 'junior_youth_group', 'study_circle']
+      keys.map(function (activity) {
+        $scope.growth_profiles[c].mailActivitiesCount += $scope.growth_profiles[c][activity + '_count']
+      })
+    }
+    $scope.changeFormState()
+  }
+
   $scope.calculateTotals = function (human_resource, keys) {
     if(!keys) {
-      keys = ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits']
+      var keys = ['full_name', 'devotional_gatherings', 'children_classes', 'junior_youth_groups', 'study_circles', 'visits']
     }
 
-    for(c=0; c<4; c++) {
+    for(var c = 0; c < 4; c++) {
       keys.map(function (f) {
         $scope.growth_profiles[c][human_resource][f + '_count'] = 0
         $scope.growth_profiles[c][human_resource].map(function (g) {
