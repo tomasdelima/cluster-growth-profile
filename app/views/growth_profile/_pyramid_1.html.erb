@@ -1,6 +1,6 @@
 <div id="pyramid-1" class="list colspan-21">
   <div class="col-21 no-border left">
-    <h3>Movimento da pirâmide acumulado até o ciclo <%= @growth_profiles[3].gregorian_cycle[:end_of_cycle] %></h3>
+    <h3>Movimento da pirâmide acumulado até o fim do ciclo (<%= GrowthProfile.to_gregorian_cycle(params[:cycle], :long)[:end_of_cycle] %>)</h3>
   </div>
 
   <md-button class="md-raised md-ink-ripple no-border" ng-click="copyDataFromLastCycle('accumulated_pyramid')">Copiar dados do ciclo anterior</md-button>

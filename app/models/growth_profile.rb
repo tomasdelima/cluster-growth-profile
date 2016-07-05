@@ -90,10 +90,10 @@ class GrowthProfile < ActiveRecord::Base
     GrowthProfile.to_gregorian_cycle(cycle)
   end
 
-  def self.to_gregorian_cycle (cycle)
+  def self.to_gregorian_cycle (cycle, format=:short)
     {
-      beginning_of_cycle: I18n.l(beginning_of_cycle(cycle), format: :short),
-      end_of_cycle: I18n.l(end_of_cycle(cycle), format: :short)
+      beginning_of_cycle: I18n.l(beginning_of_cycle(cycle), format: format),
+      end_of_cycle: I18n.l(end_of_cycle(cycle), format: format)
     }
   end
 
