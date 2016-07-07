@@ -17,7 +17,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3501301,ÁLVARES MACHADO,São Paulo,Presidente Prudente,SP01,1º Marco
 3501400,ÁLVARO DE CARVALHO,São Paulo,Pompéia,Sem conjunto,Meta
 3501509,ALVINLÂNDIA,São Paulo,Pompéia,Sem conjunto,Meta
-3501608,AMERICANA,São Paulo,Irrestritos como o vento,SP08,2º Marco
+3501608,AMERICANA,São Paulo,Irrestritos como o Vento,SP08,2º Marco
 3501707,AMÉRICO BRASILIENSE,São Paulo,Araraquara,Sem conjunto,Meta
 3501806,AMÉRICO DE CAMPOS,São Paulo,Votuporanga,Sem conjunto,Meta
 3501905,AMPARO,São Paulo,Amparo,SP07,1º Marco
@@ -42,8 +42,8 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3503505,AREIAS,São Paulo,Cruzeiro,Sem conjunto,Meta
 3503604,AREIÓPOLIS,São Paulo,Botucatu,Sem conjunto,Meta
 3503703,ARIRANHA,São Paulo,Catanduva,Sem conjunto,Meta
-3503802,ARTUR NOGUEIRA,São Paulo,Mogi-Mirim,SP07,1º Marco
-3503901,ARUJÁ,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3503802,ARTUR NOGUEIRA,São Paulo,Mogi Mirim,SP07,1º Marco
+3503901,ARUJÁ,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3503950,ASPÁSIA,São Paulo,Jales,Sem conjunto,Meta
 3504008,ASSIS,São Paulo,Assis,Sem conjunto,Meta
 3504107,ATIBAIA,São Paulo,Jarinu,SP06,1º Marco
@@ -73,7 +73,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3506359,BERTIOGA,São Paulo,Baixada,Sem conjunto,Meta
 3506409,BILAC,São Paulo,Araçatuba,Sem conjunto,Meta
 3506508,BIRIGUI,São Paulo,Araçatuba,Sem conjunto,Meta
-3506607,BIRITIBA-MIRIM,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3506607,BIRITIBA-MIRIM,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3506706,BOA ESPERANÇA DO SUL,São Paulo,Araraquara,Sem conjunto,Meta
 3506805,BOCAINA,São Paulo,Jaú,Sem conjunto,Meta
 3506904,BOFETE,São Paulo,Botucatu,Sem conjunto,Meta
@@ -170,7 +170,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3515103,EMBU-GUAÇU,São Paulo,Caminhos,SP04,1º Marco
 3515004,EMBU DAS ARTES,São Paulo,Caminhos,SP04,1º Marco
 3515129,EMILIANÓPOLIS,São Paulo,Presidente Prudente,SP01,1º Marco
-3515152,ENGENHEIRO COELHO,São Paulo,Mogi-Mirim,SP07,1º Marco
+3515152,ENGENHEIRO COELHO,São Paulo,Mogi Mirim,SP07,1º Marco
 3515186,ESPÍRITO SANTO DO PINHAL,São Paulo,Aguaí ,Sem conjunto,Meta
 3515194,ESPÍRITO SANTO DO TURVO,São Paulo,Ourinhos,Sem conjunto,Meta
 3557303,ESTIVA GERBI,São Paulo,Rio de Vida Eterna,SP07,2º Marco
@@ -181,7 +181,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3515608,FERNANDO PRESTES,São Paulo,Itápolis,Sem conjunto,Meta
 3515509,FERNANDÓPOLIS,São Paulo,Fernandópolis,Sem conjunto,Meta
 3515657,FERNÃO,São Paulo,Pompéia,Sem conjunto,Meta
-3515707,FERRAZ DE VASCONCELOS,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3515707,FERRAZ DE VASCONCELOS,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3515806,FLORA RICA,São Paulo,Adamantina,Sem conjunto,Meta
 3515905,FLOREAL,São Paulo,Votuporanga,Sem conjunto,Meta
 3516002,FLÓRIDA PAULISTA,São Paulo,Adamantina,Sem conjunto,Meta
@@ -208,7 +208,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3518008,GUARANI D'OESTE,São Paulo,Fernandópolis,Sem conjunto,Meta
 3518107,GUARANTÃ,São Paulo,Lins,SP01,1º Marco
 3518206,GUARARAPES,São Paulo,Araçatuba,Sem conjunto,Meta
-3518305,GUARAREMA,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3518305,GUARAREMA,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3518404,GUARATINGUETÁ,São Paulo,Guaratinguetá,SP04,1º Marco
 3518503,GUAREÍ,São Paulo,Tatuí ,Sem conjunto,Meta
 3518602,GUARIBA,São Paulo,Araraquara,Sem conjunto,Meta
@@ -217,7 +217,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3518859,GUATAPARÁ,São Paulo,Luz de Deus,SP03,1º Marco
 3518909,GUZOLÂNDIA,São Paulo,Ilha Solteira,Sem conjunto,Meta
 3519006,HERCULÂNDIA,São Paulo,Tupã,SP01,1º Marco
-3519055,HOLAMBRA,São Paulo,Mogi-Mirim,SP07,1º Marco
+3519055,HOLAMBRA,São Paulo,Mogi Mirim,SP07,1º Marco
 3519071,HORTOLÂNDIA,São Paulo,Campinas,SP06,1º Marco
 3519105,IACANGA,São Paulo,Fênix Dourada,SP01,2º Marco
 3519204,IACRI,São Paulo,Tupã,SP01,1º Marco
@@ -265,7 +265,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3522802,ITAPORANGA,São Paulo,Avaré,Sem conjunto,Meta
 3522901,ITAPUÍ,São Paulo,Jaú,Sem conjunto,Meta
 3523008,ITAPURA,São Paulo,Ilha Solteira,Sem conjunto,Meta
-3523107,ITAQUAQUECETUBA,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3523107,ITAQUAQUECETUBA,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3523206,ITARARÉ,São Paulo,Itaberá,Sem conjunto,Meta
 3523305,ITARIRI,São Paulo,Litoral Sul,Sem conjunto,Meta
 3523404,ITATIBA,São Paulo,Itatiba,SP06,1º Marco
@@ -344,9 +344,9 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3530300,MIRASSOL,São Paulo,São José do Rio Preto,SP02,Incipiente
 3530409,MIRASSOLÂNDIA,São Paulo,Tanabi,Sem conjunto,Meta
 3530508,MOCOCA,São Paulo,Aguaí,Sem conjunto,Meta
-3530607,MOGI DAS CRUZES,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3530607,MOGI DAS CRUZES,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3530706,MOGI GUAÇU,São Paulo,Rio de Vida Eterna,SP07,2º Marco
-3530805,MOGI MIRIM,São Paulo,Mogi-Mirim,SP07,1º Marco
+3530805,MOGI MIRIM,São Paulo,Mogi Mirim,SP07,1º Marco
 3530904,MOMBUCA,São Paulo,Piracicaba,SP08,1º Marco
 3531001,MONÇÕES,São Paulo,Votuporanga,Sem conjunto,Meta
 3531100,MONGAGUÁ,São Paulo,Baixada,Sem conjunto,Meta
@@ -377,7 +377,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3533106,NOVA GUATAPORANGA,São Paulo,Tupi Paulista,Sem conjunto,Meta
 3533205,NOVA INDEPENDÊNCIA,São Paulo,Andradina,SP02,1º Marco
 3533304,NOVA LUZITÂNIA,São Paulo,Auriflama,Sem conjunto,Meta
-3533403,NOVA ODESSA,São Paulo,Irrestritos como o vento,SP08,2º Marco
+3533403,NOVA ODESSA,São Paulo,Irrestritos como o Vento,SP08,2º Marco
 3533254,NOVAIS,São Paulo,Catanduva,Sem conjunto,Meta
 3533502,NOVO HORIZONTE,São Paulo,Catanduva,Sem conjunto,Meta
 3533601,NUPORANGA,São Paulo,São Joaquim da Barra,Sem conjunto,Meta
@@ -445,7 +445,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3539509,PITANGUEIRAS,São Paulo,Jaboticabal,SP03,1º Marco
 3539608,PLANALTO,São Paulo,José Bonifácio,Sem conjunto,Meta
 3539707,PLATINA,São Paulo,Assis,Sem conjunto,Meta
-3539806,POÁ,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3539806,POÁ,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3539905,POLONI,São Paulo,São José do Rio Preto,SP02,Incipiente
 3540002,POMPÉIA,São Paulo,Pompéia,Sem conjunto,Meta
 3540101,PONGAÍ,São Paulo,Lins,SP01,1º Marco
@@ -505,7 +505,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3544707,SAGRES,São Paulo,Adamantina,Sem conjunto,Meta
 3544806,SALES,São Paulo,Catanduva,Sem conjunto,Meta
 3544905,SALES DE OLIVEIRA,São Paulo,São Joaquim da Barra,Sem conjunto,Meta
-3545001,SALESÓPOLIS,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3545001,SALESÓPOLIS,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3545100,SALMOURÃO,São Paulo,Adamantina,Sem conjunto,Meta
 3545159,SALTINHO,São Paulo,Piracicaba,SP08,1º Marco
 3545209,SALTO,São Paulo,Rouxinol,SP05,2º Marco
@@ -514,7 +514,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3545506,SANDOVALINA,São Paulo,Presidente Prudente,SP01,1º Marco
 3545605,SANTA ADÉLIA,São Paulo,Catanduva,Sem conjunto,Meta
 3545704,SANTA ALBERTINA,São Paulo,Jales,Sem conjunto,Meta
-3545803,SANTA BÁRBARA D'OESTE,São Paulo,Irrestritos como o vento,SP08,2º Marco
+3545803,SANTA BÁRBARA D'OESTE,São Paulo,Irrestritos como o Vento,SP08,2º Marco
 3546009,SANTA BRANCA,São Paulo,Estrela do Vale,SP04,2º Marco
 3546108,SANTA CLARA D'OESTE,São Paulo,Jales,Sem conjunto,Meta
 3546207,SANTA CRUZ DA CONCEIÇÃO,São Paulo,Pirassununga,Sem conjunto,Meta
@@ -537,7 +537,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3547700,SANTO ANASTÁCIO,São Paulo,Presidente Epitácio,Sem conjunto,Meta
 3547809,SANTO ANDRÉ,São Paulo,Seguidores da Glória,SP04,2º Marco
 3547908,SANTO ANTÔNIO DA ALEGRIA,São Paulo,Cajuru,Sem conjunto,Meta
-3548005,SANTO ANTÔNIO DE POSSE,São Paulo,Mogi-Mirim,SP07,1º Marco
+3548005,SANTO ANTÔNIO DE POSSE,São Paulo,Mogi Mirim,SP07,1º Marco
 3548054,SANTO ANTÔNIO DO ARACANGUÁ,São Paulo,Auriflama,Sem conjunto,Meta
 3548104,SANTO ANTÔNIO DO JARDIM,São Paulo,Aguaí,Sem conjunto,Meta
 3548203,SANTO ANTÔNIO DO PINHAL,São Paulo,Campos do Jordão,Sem conjunto,Meta
@@ -586,7 +586,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3552304,SUD MENNUCCI,São Paulo,Ilha Solteira,Sem conjunto,Meta
 3552403,SUMARÉ,São Paulo,Campinas,SP06,1º Marco
 3552551,SUZANÁPOLIS,São Paulo,Ilha Solteira,Sem conjunto,Meta
-3552502,SUZANO,São Paulo,Luzes - Mogi das Cruzes,SP04,1º Marco
+3552502,SUZANO,São Paulo,Mogi das Cruzes,SP04,1º Marco
 3552601,TABAPUÃ,São Paulo,Catanduva,Sem conjunto,Meta
 3552700,TABATINGA,São Paulo,Itápolis,Sem conjunto,Meta
 3552809,TABOÃO DA SERRA,São Paulo,Caminhos,SP04,1º Marco
@@ -1140,7 +1140,7 @@ CD_GEOCMU,Nome Município,Estado,Agrupamento,Conjunto,Condição
 3135407,JECEABA,Minas Gerais,Itaguara,Sem conjunto,Meta
 3135456,JENIPAPO DE MINAS,Minas Gerais,Capelinha,Sem conjunto,Meta
 3135506,JEQUERI,Minas Gerais,Ponte Nova,Sem conjunto,Meta
-3135605,JEQUITAÍ,Minas Gerais,Rio de Luz,MG02,2º Marco
+3135605,JEQUITAÍ,Minas Gerais,Rio de LUZ,MG02,2º Marco
 3135704,JEQUITIBÁ,Minas Gerais,Sete Lagoas,MG03,1º Marco
 3135803,JEQUITINHONHA,Minas Gerais,Almenara,Sem conjunto,Meta
 3135902,JESUÂNIA,Minas Gerais,Cambuquira,MG01,1º Marco
