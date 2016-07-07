@@ -24,15 +24,21 @@ pt-BR:
       cluster:
         one: Agrupamento
         other: Agrupamentos
+      city:
+        one: Cidade
+        other: Cidades
       growth_profile:
         one: Perfil de Crescimento
         other: Perfis de Crescimento
     attributes:
-      user: &user_fields
-        email: 'E-mail'
-        password: 'Senha'
+      standard: &standard
+        name: 'Nome'
         created_at: 'Criado em'
         updated_at: 'Atualizado em'
+      user: &user_fields
+        <<: *standard
+        email: 'E-mail'
+        password: 'Senha'
         last_sign_in_at: 'Último login em'
         sign_in_count: '# de logins'
         remember_me: Lembrar de mim
@@ -43,7 +49,7 @@ pt-BR:
       admin:
         <<: *user_fields
       cluster:
-        name: 'Nome'
+        <<: *standard
         growth_stage: 'Estágio de crescimento'
         counsil_name: 'Conselho'
         abm_names: 'Membros do Corpo Auxiliar'
@@ -55,12 +61,14 @@ pt-BR:
         lsa_count: '# de AELs'
         population_size: 'População total da área'
         sites_with_believers_count: '# locais com crentes'
-        created_at: 'Criado em'
-        updated_at: 'Atualizado em'
+        cities: Cidades
+        growth_profiles: Perfis de Crescimento
+      city:
+        <<: *standard
+        cluster: Agrupamento
       growth_profile:
+        <<: *standard
         cycle: 'Ciclo'
-        created_at: 'Criado em'
-        updated_at: 'Atualizado em'
         book1: 'Livro 1'
         book2: 'Livro 2'
         book3grade1: 'Livro 3 série 1'
@@ -489,3 +497,5 @@ pt-BR:
         default_col_sep: ","
         col_sep: "Separador de colunas"
         col_sep_help: "Deixar em branco para usar omissão ('%{value}')" # value is default_col_sep
+
+# pt-BR.devise.sessions.user.signed_in
