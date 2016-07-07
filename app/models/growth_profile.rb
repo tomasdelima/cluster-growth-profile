@@ -1,17 +1,25 @@
 class GrowthProfile < ActiveRecord::Base
   belongs_to :cluster
 
+  validates :cycle, :cluster_id, presence: true
+
   serialize :external_human_resources, Array
   serialize :active_internal_human_resources, Array
   serialize :youth_conferences_accompaniments, Array
   serialize :accumulated_pyramid, Hash
   serialize :growth_pyramid, Hash
 
+  attr_accessor :name
+
   def to_json
     GrowthProfile.fields.reduce({}) do |memo, f|
       memo[f] = send(f)
       memo
     end.to_json
+  end
+
+  def name
+    "#{cluster.name}: #{cycle}"
   end
 
   def self.fields

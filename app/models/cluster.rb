@@ -3,6 +3,9 @@ class Cluster < ActiveRecord::Base
   has_many :growth_profiles
   has_many :cities
 
+  validates :name, :growth_stage, presence: true
+  validates :name, uniqueness: true
+
   def to_json
     {
       abm_names:       abm_names,
@@ -32,5 +35,30 @@ class Cluster < ActiveRecord::Base
     year = ((today - Date.new(1844, 4, 20)).days/1.year).ceil
 
     {cycle: cycle_number, year: year}
+  end
+
+  def growth_stage= (value)
+    new_value = if(value.to_s.match(/\d+/).to_s == value.to_s)
+      value
+    else
+      Cluster.growth_stages.invert[value]
+    end
+
+    write_attribute(:growth_stage, new_value)
+  end
+
+  def growth_stage
+    Cluster.growth_stages[read_attribute(:growth_stage)]
+  end
+
+  def self.growth_stages
+    {
+      nil => 'Desconhecido',
+      '0': 'Insipiente',
+      '1': '1º Marco',
+      '2': '2º Marco',
+      '3': '3º Marco',
+      '4': 'Fronteiras de Aprendizagem',
+    }.with_indifferent_access
   end
 end
