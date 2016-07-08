@@ -25,7 +25,9 @@
     <div class="col-4">&nbsp;{{cluster.lsa_count}}&nbsp;</div>
     <div class="col-4 header">Nome dos membros do Corpo Auxiliar no agrupamento</div>
     <div class="col-4">&nbsp;{{cluster.abm_names}}&nbsp;</div>
-    <div class="col-4 header">Nome das cidades no agrupamento</div>
-    <div class="col-4">&nbsp;{{cluster.cities.join(', ')}}&nbsp;</div>
+    <div class="col-8 list cities">
+        <div class="col-4 row-3 header">Nomes das cidades no agrupamento</div>
+        <div class="col-4 row-3">&nbsp;{{cluster.cities.join(', ')}}&nbsp;</div>
+    </div>
   </div>
 </div>
