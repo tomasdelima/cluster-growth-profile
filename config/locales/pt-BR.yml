@@ -65,6 +65,7 @@ pt-BR:
         population_size: 'População total da área'
         sites_with_believers_count: '# locais com crentes'
         cities: Cidades
+        users: Usuários
         growth_profiles: Perfis de Crescimento
         super_cluster: Conjunto
       super_cluster:
