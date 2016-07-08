@@ -37,6 +37,16 @@
   }
 }
 
+#table-12 div div {
+  line-height: 27px;
+
+  input[type="checkbox"] {
+    margin: 0;
+    top: 3px;
+    position: relative;
+  }
+}
+
 #send-form-message {
   transition: all linear 0.2s;
   position: fixed;

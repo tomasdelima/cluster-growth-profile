@@ -32,7 +32,7 @@
 
   *:not(.list) {
     line-height: 25px;
-    font-size: initial;
+    font-size: 14px;
     display: inline-block;
     border: 1px solid #DDD;
     border-top-width: 0;
@@ -61,6 +61,15 @@
 
   &.hover:hover {background: rgba(0,0,0,0.1);}
   .header {background: rgba(0,0,0,0.2);}
+  &.header {
+    display: flex;
+
+    * {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+  }
   .small {
     font-size: 12px;
     line-height: 22px;
