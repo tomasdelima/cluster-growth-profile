@@ -22,6 +22,7 @@ class Cluster < ActiveRecord::Base
       name:            name,
       population_size: population_size,
       sites_with_believers_count: sites_with_believers_count,
+      cities:          cities.map(&:name),
     }.to_json
   end
 
