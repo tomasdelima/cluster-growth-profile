@@ -24,6 +24,9 @@ pt-BR:
       cluster:
         one: Agrupamento
         other: Agrupamentos
+      super_cluster:
+        one: Conjunto
+        other: Conjuntos
       city:
         one: Cidade
         other: Cidades
@@ -63,12 +66,17 @@ pt-BR:
         sites_with_believers_count: '# locais com crentes'
         cities: Cidades
         growth_profiles: Perfis de Crescimento
+        super_cluster: Conjunto
+      super_cluster:
+        <<: *standard
+        clusters: Agrupamentos
       city:
         <<: *standard
         cluster: Agrupamento
       growth_profile:
         <<: *standard
         cycle: 'Ciclo'
+        cluster: Agrupamento
         book1: 'Livro 1'
         book2: 'Livro 2'
         book3grade1: 'Livro 3 série 1'

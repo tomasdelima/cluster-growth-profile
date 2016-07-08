@@ -60,6 +60,11 @@ RailsAdmin.config do |config|
     exclude_fields :id
   end
 
+  config.model 'SuperCluster' do
+    include_all_fields
+    exclude_fields :id
+  end
+
   config.model 'City' do
     include_all_fields
     exclude_fields :id

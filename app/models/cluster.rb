@@ -2,6 +2,7 @@ class Cluster < ActiveRecord::Base
   has_and_belongs_to_many :users
   has_many :growth_profiles
   has_many :cities
+  belongs_to :super_cluster
 
   validates :name, :growth_stage, presence: true
   validates :name, uniqueness: true
@@ -24,6 +25,10 @@ class Cluster < ActiveRecord::Base
     }.to_json
   end
 
+  def growth_stage_enum
+    Cluster.growth_stages.invert
+  end
+
   def current_cycle
     today = Date.today
 
@@ -38,7 +43,7 @@ class Cluster < ActiveRecord::Base
   end
 
   def growth_stage= (value)
-    new_value = if(value.to_s.match(/\d+/).to_s == value.to_s)
+    new_value = if(value.to_s.match(/[\-\d]+/).to_s == value.to_s)
       value
     else
       Cluster.growth_stages.invert[value]
@@ -54,7 +59,8 @@ class Cluster < ActiveRecord::Base
   def self.growth_stages
     {
       nil => 'Desconhecido',
-      '0': 'Insipiente',
+      '-1': 'Incipiente',
+      '0': 'Meta',
       '1': '1º Marco',
       '2': '2º Marco',
       '3': '3º Marco',

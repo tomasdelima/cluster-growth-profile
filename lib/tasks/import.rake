@@ -1,5 +1,5 @@
 namespace :import do
-  task clean: :environment do
+  task clear: :environment do
     ActiveRecord::Base.transaction do
       clusters_count = Cluster.count
       cities_count = City.count
@@ -12,7 +12,37 @@ namespace :import do
     end
   end
 
-  task clusters_and_cities: :environment do
+  task update_clusters: :environment do
+    ActiveRecord::Base.transaction do
+      new_super_clusters_count = 0
+      new_clusters_count = 0
+
+      growth_stages = {
+        'Incipiente': -1,
+        'Meta': 0,
+        '1º Marco': 1,
+        '2º Marco': 2,
+      }.with_indifferent_access
+
+      data = CSV.open('db/Mapeamento_de_agrupamentos_sudeste.csv').map do |row|
+        super_cluster = SuperCluster.find_or_create_by(name: row[4]) if row[4] != 'Sem conjunto'
+        {
+          name: row[3],
+          super_cluster: super_cluster,
+          growth_stage: growth_stages[row[5]]
+        }
+      end[1..-1].select {|a| a[:name]}
+
+      data.map do |cluster_data|
+        Cluster.find_by(name: cluster_data[:name]).update_attributes(cluster_data)
+        new_clusters_count += 1
+      end
+
+      puts ">> #{new_clusters_count} clusters updated"
+    end
+  end
+
+  task create_clusters_and_cities: :environment do
     latin_letters = [
       ['Á', 'á'],
       ['É', 'é'],
@@ -62,7 +92,9 @@ namespace :import do
         end
       end
 
-      puts ">> #{new_clusters_count} clusters created"
+      Cluster.find_by(name: :Agrupamento).destroy
+
+      puts ">> #{new_clusters_count - 1} clusters created"
       puts ">> #{new_cities_count} cities created"
     end
   end
