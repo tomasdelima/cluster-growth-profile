@@ -11,6 +11,7 @@ gem 'rails_admin'
 gem 'devise'
 gem 'angularjs-rails'
 gem 'rails-angular-material'
+gem 'spreadsheet'
 
 group :development, :test do
   gem 'byebug'

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     get '/cluster/:cluster_id' => 'growth_profile#new', as: :cluster
     get '/cluster/:cluster_id/cycle/:cycle' => 'growth_profile#new', as: :cycle
     post '/growth_profile' => 'growth_profile#create'
+
+    get '/report/consolidated/:cycle' => 'report#consolidated'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
