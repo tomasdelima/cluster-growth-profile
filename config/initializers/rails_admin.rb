@@ -1,4 +1,15 @@
+require Rails.root.join('lib', 'rails_admin_download_report.rb')
+
 RailsAdmin.config do |config|
+  module RailsAdmin
+    module Config
+      module Actions
+        class DownloadReport < RailsAdmin::Config::Actions::Base
+          RailsAdmin::Config::Actions.register(self)
+        end
+      end
+    end
+  end
 
   ### Popular gems integration
 
@@ -33,6 +44,8 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+
+    download_report
   end
 
   config.model 'Admin' do

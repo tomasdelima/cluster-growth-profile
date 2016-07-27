@@ -471,6 +471,10 @@ pt-BR:
         title: "Histórico para %{model_label} '%{object_label}'"
         menu: "Histórico"
         breadcrumb: "Histórico"
+      download_report:
+        title: Download de relatórios
+        menu: Relatórios
+        breadcrumb: Relatórios
     form:
       cancel: "Cancelar"
       basic_info: "Informação Básica"

@@ -1,0 +1,8 @@
+<label>Relatório consolidado: </label>
+<%= select_tag "chosen-cycle", options_for_select(@cycles_to_choose) %>
+
+<script type="text/javascript">
+  $('#chosen-cycle').on('change', function () {
+    window.location = '/report/consolidated/' + $('#chosen-cycle').val()
+  })
+</script>
